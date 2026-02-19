@@ -76,6 +76,42 @@ The script also creates or updates:
 - `--max-matches`: Control how many matched bullets are inserted into notes.
 - `--no-auto-match`: Skip job-description keyword matching against the experience bank.
 
+## Consistent PDF Rendering
+
+Use the dedicated renderer so resume/CV PDFs come out with the same typography and spacing every time.
+
+Fastest command:
+
+```bash
+./mdtopdf "/absolute/path/to/file.md" --profile auto
+```
+
+Full command guide:
+- `mdtopdf.md`
+
+One-time setup:
+
+```bash
+./mdtopdf --setup
+```
+
+Render resume and CV:
+
+```bash
+./mdtopdf \
+  "applications/SS&C Technologies/Sales Executive Risk Analytics Software/Augusto_Pena_SSCTechnologies_SalesExecutiveRiskAnalyticsSoftware_Resume.md" \
+  --profile resume
+
+./mdtopdf \
+  "applications/SS&C Technologies/Sales Executive Risk Analytics Software/Augusto_Pena_SSCTechnologies_SalesExecutiveRiskAnalyticsSoftware_CV.md" \
+  --profile cv
+```
+
+Notes:
+- The renderer runs lint checks to catch formatting traps (for example, bullets that start with `#`).
+- Use `--allow-issues` to render anyway, but default behavior is to fail fast so broken formatting does not reach PDF.
+- Use `--keep-html` if you want to inspect the generated HTML.
+
 ## Suggested Workflow
 
 1. Paste the job description and run `scripts/new_application.py`.

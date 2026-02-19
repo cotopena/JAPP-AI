@@ -15,5 +15,5 @@ Dear ${salutation},
 
 Sincerely,
 Augusto Pena
-INFO@ROOFCONNECTUSA.COM
+cotopena@gmail.com
 (305)-744-6406
