@@ -180,6 +180,72 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Additional details:
   - 
 
+## Reehash.com - Interactive 3D Impact Window & Door Presentation Platform (Software Developer / Product Engineer, Project Build During Reehash Tenure)
+- Stack: React, TypeScript, Vite, Three.js, React Three Fiber, Drei, Zustand, Blender, GLB/DRACO assets.
+- Built an interactive web presentation that explains hurricane-rated impact windows and doors through a scroll-driven 3D story instead of static slides; this is now used by some contractors as a primary presentation tool.
+- Designed and shipped a multi-stage product flow (`setup -> intro -> interactive experience`) to personalize rep delivery and improve transitions to homeowner conversations.
+- Implemented a 9-section scroll-synchronized 3D narrative where camera movement, model states, and HTML content stay in lockstep.
+- Built keyframe-based camera interpolation and per-section animation logic for smooth scene progression.
+- Self-taught Blender during delivery to create and prepare 3D assets, then integrated Blender-authored models into the React + Three.js runtime.
+- Established model naming/export contracts so Blender parts could be controlled programmatically from React Three Fiber code.
+- Integrated GLB assets with DRACO decoding, including model cloning and object-level transformation pipelines for runtime control.
+- Implemented real-time customization controls (glass tint, Low-E coating, frame colors) by wiring UI state directly to Three.js material updates.
+- Added an interactive A/C usage simulation driven by temperature inputs and Low-E toggles to support benefit-based sales discussions.
+- Implemented contextual sales-assist panels including homeowner score capture and objection follow-up prompts.
+- Delivered responsive branded overlays and presentation-safe UI behavior for desktop and mobile sessions.
+- Documented and enforced an AI-first `12-factor-prompt` workflow (`ticket -> plan -> implement -> validate -> commit`) with tooling defaults and lint checks for consistent implementation quality.
+
+### Modular Bullet Library (Pick by Job Type)
+
+#### Software Developer / Frontend Engineer
+- Developed a React + TypeScript + R3F application that converts product engineering concepts into interactive 3D storytelling.
+- Implemented scroll-driven scene orchestration across camera rigging, model transitions, and synchronized narrative sections.
+- Built centralized Zustand state to drive both UI controls and 3D material behavior in real time.
+- Optimized 3D runtime behavior through GLB loading patterns, scene cloning, and asset preloading.
+- Delivered a mobile-aware interface with adaptive overlays, panel behavior, and readable narrative cards.
+
+#### Context Engineer / AI-First Developer
+- Designed deterministic behavior from multiple context signals (scroll position, user selections, and session inputs).
+- Built explicit asset naming/state contracts between 3D content and frontend logic to reduce ambiguity in agent-assisted changes.
+- Authored and used a `12-factor-prompt` workflow to standardize planning, implementation, validation, and commits.
+- Added prompt-linting and tool-priority conventions to improve implementation consistency and reduce agent drift.
+- Maintained context documentation artifacts that make project intent reusable for future contributors and AI agents.
+
+#### AI Consulting / Solutions Consulting
+- Converted domain-heavy construction and performance concepts into a guided visual conversation tool for homeowner meetings.
+- Built personalized presentation flows (homeowner details, prior quote context) with live objection-handling support.
+- Embedded decision-support interactions (finish comparisons, energy usage simulation, score capture) for consultative selling.
+- Balanced technical depth with buyer comprehension using plain-language narrative sections tied to 3D visual proof points.
+
+#### Business Consulting / Product Strategy
+- Translated business goals (trust, differentiation, stronger close conversations) into concrete product features and UX flow.
+- Created a repeatable narrative framework that explains homeowner value progressively instead of only listing technical specs.
+- Instrumented qualitative feedback capture ("what kept us from being a 10?") to support continuous process improvement.
+- Delivered a reusable product asset for demos, rep onboarding, and proposal support contexts.
+
+### ATS Keywords
+- React
+- TypeScript
+- Three.js
+- React Three Fiber
+- Zustand
+- Vite
+- Blender
+- 3D web
+- Interactive storytelling
+- Product visualization
+- Scroll-driven animation
+- State management
+- Technical communication
+- Consultative UX
+- AI-first workflow
+- Context engineering
+- Prompt operations
+- Agentic development
+- Sales enablement tools
+- Decision-support UI
+- Customer-facing prototypes
+
 ## Roof1303.com (Sales Executive and Sales Manager, 10/2021 - 05/2023)
 - Prospected and closed the first 83 online roof sales using virtual web-based demos before product finalization.
 - Organized the sales pipeline in Trello and migrated to Salesforce to improve efficiency.
