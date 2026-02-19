@@ -33,6 +33,40 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Defined deployment and environment workflows across Convex + Vercel app runtime and Render-hosted PDF service.
 - Created and maintained a 12-factor prompt/agent workflow (ticket -> plan -> implementation -> verification -> PR docs) with linting scripts for process quality.
 
+### Strategic Intelligence and Finance Systems (Docs-Only Program)
+- Built and operated a private, documentation-first strategic intelligence repository that functions as a business planning platform, financial modeling system, and AI-assisted decision engine for QuoteNclose.
+- Architected a canonical documentation system that separates sensitive strategy/finance artifacts from application code, enabling investor-safe collaboration and reducing operational risk from cross-repo contamination.
+- Designed repository information architecture across business planning, strategic context, finance, operations, analysis, research, and marketing domains with explicit ownership boundaries and change accountability.
+- Implemented a governance model where strategic claims, assumptions, and financial outputs are traceable, versioned, and auditable through structured changelogs and lifecycle-controlled artifacts.
+- Developed a full business-plan engineering framework covering executive thesis, ICP definition, value proposition, pricing mechanics, GTM sequencing, competitive mapping, and multi-phase expansion logic.
+- Built an assumptions register with unique IDs, ownership assignment, risk-if-wrong analysis, `lock`/`watch`/`TBD` statuses, and pre-investor open-item tracking to improve decision clarity and reduce hidden dependency risk.
+- Established a source-of-truth evidence registry with citation IDs, publisher metadata, publish/access dates, claim linkage, and usage rules so external market assertions remain defensible under diligence.
+- Created and maintained a 3-year Excel financial projections model with structured input controls, protected formula zones, and integrated outputs for Income Statement, Cash Flow, Balance Sheet, breakeven analysis, financial ratios, and diagnostics.
+- Engineered workbook documentation at sheet and data-flow level, mapping how startup/funding, payroll, sales forecast, working-capital timing, and OpEx assumptions propagate through accrual and cash statements.
+- Designed AI-operable finance workflows enabling direct workbook interaction for scenario modeling, assumption updates, KPI extraction, delta analysis, and recommendation generation under controlled change policies.
+- Instituted scenario execution controls requiring ticketed intent, planned change sets, before/after workbook archival, KPI comparison tables, and CFO-style interpretation before downstream narrative adoption.
+- Standardized finance KPI instrumentation for decision reviews: Year 1 revenue, gross margin and margin percentage, EBITDA, net income/loss, ending cash, minimum monthly cash, max LOC utilization, monthly breakeven, and balance-sheet integrity checks.
+- Locked and documented baseline investor metrics while preserving legacy scenarios for audit history, enabling historical comparability without contaminating current external messaging.
+- Implemented non-negotiable financial guardrails for workbook safety, including explicit authorization gates for formula/structure edits and mandatory paired narrative/changelog updates after approved assumption changes.
+- Built a documentation operations pipeline that mirrors software delivery rigor: ticket refinement, open-question resolution, plan validation, execution, automated verification, manual verification, closure, and PR-ready narrative output.
+- Authored a reusable command library for structured execution workflows (ticket creation, planning, implementation, verification, variant comparison, branching/worktree strategy, and PR description generation).
+- Added shell-based quality gates and linting scripts for prompt standards, ticket consistency, and docs QA to maintain repeatability and reduce process drift.
+- Implemented variant-analysis methodology for strategic alternatives, including isolated branch/worktree execution, assumption separation, comparative memo generation, and explicit `GO`/`HOLD`/`NO-GO` decision frameworks.
+- Operationalized cross-domain changelog discipline linking objectives, plans, artifacts changed, verification status, and final decision state for executive visibility and governance integrity.
+- Enforced security and privacy controls aligned to confidential business planning: no credentials/tokens/secrets in repo, no runtime config leakage, and strict docs-only scope boundaries.
+- Translated strategic hypotheses into measurable finance scenarios and back into narrative decisions, creating a closed-loop system between business analysis, modeling, and executive communication.
+- Produced investor-usable outputs that combine market evidence, assumption transparency, financial viability diagnostics, and operational execution history in one controlled environment.
+
+#### Technical Skills Demonstrated
+- Financial modeling architecture (Excel, 3-statement logic, cash-flow sensitivity, breakeven modeling)
+- AI-assisted scenario analysis and decision automation workflows
+- Governance engineering (audit trails, change controls, approval gates, baseline locking)
+- Analytical systems design (assumptions registry, evidence mapping, KPI instrumentation)
+- Process engineering (ticket/plan lifecycle frameworks, verification pipelines, variant analysis)
+- Documentation operations (docs-as-system architecture, changelog orchestration, artifact traceability)
+- Risk management and diligence readiness for investor-facing materials
+- Bash-based QA and workflow tooling for repeatable documentation quality standards
+
 ### Modular Bullet Library (Pick by Job Type)
 
 #### Full-Stack / Product Engineer
@@ -59,6 +93,14 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Added process lint scripts to enforce documentation and workflow quality gates.
 - Standardized environment and deployment documentation for local dev, preview, and production execution paths.
 
+#### Strategy / Finance Systems
+- Built a private docs-first strategic intelligence platform that separates confidential strategy/finance artifacts from product code for investor-safe collaboration.
+- Engineered a 3-year Excel model with protected formula zones and integrated 3-statement outputs, breakeven diagnostics, and cash-sensitivity analysis.
+- Implemented assumptions and evidence registries with IDs, ownership, claim linkage, and diligence-ready traceability.
+- Established scenario-governance controls: ticketed intent, planned change sets, before/after workbook archives, KPI deltas, and approval-gated narrative updates.
+- Locked baseline investor metrics while preserving legacy scenarios for historical comparability and audit continuity.
+- Operationalized a docs QA lifecycle mirroring software delivery (ticket -> plan -> execute -> verify -> close) with changelog discipline across business and finance artifacts.
+
 ### ATS Keywords
 - Multi-tenant SaaS
 - RBAC
@@ -81,6 +123,15 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Structured Logging
 - Pricing Engine
 - Workflow Automation
+- Financial Modeling
+- Three-Statement Model
+- Cash Flow Analysis
+- Breakeven Analysis
+- Governance Controls
+- Audit Trail
+- Assumptions Registry
+- Scenario Planning
+- Investor Diligence
 
 ### Metrics Placeholders to Personalize Later
 - Replaced manual quoting process with digital workflow across [X] quote types.
