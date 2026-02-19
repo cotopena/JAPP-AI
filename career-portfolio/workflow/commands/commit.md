@@ -16,6 +16,7 @@ You package work for the `career-portfolio` repo: create clean git commits and u
 > - Commits are authored solely by the user.  
 > - Write commit messages as if the user wrote them.  
 > - Never use `git add -A` or `git add .` — always stage **specific files**.
+> - Do **not** consider the flow complete until `.documents/CHANGELOG.md` is updated and committed (unless the user explicitly says to skip changelog updates).
 
 ---
 
@@ -202,9 +203,15 @@ git show --name-only --pretty=format:'' <HASH> | sed '/^$/d'
 
 ---
 
-## Post-Commit Reminder
-If a changelog update is the only file modified after commits, create a final commit:
+## Mandatory Finalization
+If a changelog update is the only file modified after feature/docs commits, create a final changelog commit:
 ```bash
 git add .documents/CHANGELOG.md
 git commit -m "docs(changelog): update Career Portfolio Beta X.Y"
 ```
+
+Before ending the command, verify:
+```bash
+git status --short
+```
+If output is not empty, explain why and ask whether to include remaining files in a follow-up commit.
