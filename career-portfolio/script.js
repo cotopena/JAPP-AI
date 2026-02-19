@@ -1,117 +1,175 @@
 const timelineData = [
   {
-    year: "2018",
-    title: "Revenue Operations Foundation",
-    subtitle: "Sales and process execution",
-    meta: "Scaled pipeline execution and process consistency",
+    year: "2017-2021",
+    title: "Sales Leadership at Scale",
+    subtitle: "Mendiola Group, VP of Sales",
+    meta: "Grew annual sales from 300 to 6,000 and expanded team from 10 to 50 reps",
     summary:
-      "Built a strong operations backbone by turning messy workflows into repeatable systems. This period shaped my bias for measurable outcomes and practical tooling.",
+      "Built repeatable revenue systems before moving into software engineering. This period built my operating style: measurable execution, clear process ownership, and team-wide consistency.",
     highlights: [
-      "Standardized deal and follow-up workflows to reduce task leakage.",
-      "Built reporting habits that made weekly performance trends visible.",
-      "Collaborated cross-functionally to align execution with revenue goals."
+      "Exceeded quota by 80% and earned promotion to VP of Sales in year one.",
+      "Scaled leadership capacity by managing and training 12 team leaders.",
+      "Improved close rates through structured multi-channel sales playbooks."
     ]
   },
   {
-    year: "2021",
-    title: "Automation Mindset",
-    subtitle: "Internal tools and productivity scripts",
-    meta: "Reduced repetitive manual work through scriptable workflows",
+    year: "2019-2022",
+    title: "Technical Sales in AEC",
+    subtitle: "TOPO UAV, Account Executive",
+    meta: "100% YoY growth with 90% retention and 32 photogrammetry projects won",
     summary:
-      "Started replacing manual tracking and copy-paste tasks with scripted tools. The focus was speed, fewer errors, and cleaner handoffs between people.",
+      "Worked closely with contractors, engineers, and building management teams on highly technical 3D visualization and LiDAR-related projects. Strengthened domain fluency in construction workflows.",
     highlights: [
-      "Created script-driven templates for repetitive document workflows.",
-      "Moved critical process data into centralized, reusable structures.",
-      "Cut turnaround time on recurring tasks with simple automation."
+      "Built repeat business loops where 40% of revenue came from referrals and existing clients.",
+      "Delivered complex visuals for high-profile structures in South Florida.",
+      "Combined technical solution framing with consistent commercial execution."
+    ]
+  },
+  {
+    year: "2021-2023",
+    title: "Virtual Roofing Sales Systems",
+    subtitle: "Roof1303.com, Sales Executive and Sales Manager",
+    meta: "Closed the first 83 online roof sales before product finalization",
+    summary:
+      "Helped operationalize virtual roof sales and early team scaling while evolving from frontline selling into repeatable process design and forecasting ownership.",
+    highlights: [
+      "Migrated sales operations from Trello into Salesforce for better visibility.",
+      "Hired and coached a 4-person team to a 40% close rate.",
+      "Connected pipeline reporting and budget oversight to growth targets."
     ]
   },
   {
     year: "2022",
     title: "Local-First AI Analyst Prototype",
     subtitle: "Structured decision support workflow",
-    meta: "Built as a 2-week demo for auditable research operations",
+    meta: "Delivered as a 2-week demo sprint with auditable research controls",
     summary:
-      "Created a repeatable AI analyst workflow that turns broad questions into scoped tickets, executable plans, and sourced reports. The design kept human experts in the loop while accelerating research speed and consistency.",
+      "Built TRD Analyst as a prompt-orchestrated `ticket -> plan -> report` system that transforms broad questions into scoped, reviewable outputs with evidence and confidence framing.",
     highlights: [
-      "Implemented a prompt-orchestrated `ticket -> plan -> report` pipeline.",
-      "Added source-quality tiers, artifact tracking, and acceptance criteria controls.",
-      "Defined a local-first operating model with a migration path to internal web apps."
+      "Added source-quality tiers, acceptance criteria, and artifact pointer tracking.",
+      "Enforced human review gates at scope, plan, and recommendation stages.",
+      "Designed for local-first operation with a migration path to internal web apps."
     ]
   },
   {
-    year: "2024",
-    title: "Software Engineering Execution",
-    subtitle: "Full-stack product building",
-    meta: "Delivered end-to-end solutions from problem framing to release",
+    year: "2023-2024",
+    title: "Reehash Product Build Phase",
+    subtitle: "Co-Founder and CEO, Product Execution",
+    meta: "Delivered 25% sales lift for contractor clients while reducing overhead by 50%",
     summary:
-      "Transitioned into full software delivery with a product lens: understand user needs, design resilient systems, ship in iterations, and validate results.",
+      "Led development of a virtual sales platform and built a companion interactive 3D impact-window presentation product using React, Three.js, and Blender-authored assets.",
     highlights: [
-      "Implemented features across frontend, backend, and database layers.",
-      "Structured work into reproducible plans, tickets, and verification steps.",
-      "Prioritized maintainability and future change over short-term hacks."
+      "Implemented AI-assisted rebuttal support and second-attempt video workflows.",
+      "Built scroll-synchronized 3D storytelling with real-time product customization.",
+      "Standardized delivery through a `ticket -> plan -> implement -> validate` workflow."
     ]
   },
   {
-    year: "Now",
-    title: "AI-Accelerated Engineering",
-    subtitle: "Quality at speed",
-    meta: "Using AI as leverage while keeping engineering standards high",
+    year: "2025-Present",
+    title: "Safeguard Platform Delivery",
+    subtitle: "Founder + full-stack consultant",
+    meta: "Shipped quote-to-contract and partner referral systems for impact-window operations",
     summary:
-      "Current focus is combining AI-assisted execution with clear architecture, strong testing habits, and high-signal communication so teams move faster without losing rigor.",
+      "Built production-oriented systems across frontend, backend, and data layers, including secure tokenized flows, RLS policy design, workflow automation, and operational documentation.",
     highlights: [
-      "Use AI to accelerate scaffolding, debugging, and delivery loops.",
-      "Maintain strict review quality around correctness and regressions.",
-      "Design systems and workflows that other teams can confidently reuse."
+      "Owned full quote-to-contract lifecycle with PDF signing and audit support.",
+      "Delivered partner referral platform using React, FastAPI, and Supabase.",
+      "Established QA coverage across unit/integration/E2E suites (18 test files)."
+    ]
+  },
+  {
+    year: "2026-Present",
+    title: "QuoteNclose Multi-Tenant SaaS",
+    subtitle: "Full-stack engineering + finance systems",
+    meta: "Built tenant-scoped quoting/contracts platform plus docs-first financial governance",
+    summary:
+      "Current work combines product engineering and strategic finance systems: secure multi-tenant architecture, pricing engines, contract automation, webhook hardening, and investor-grade scenario governance.",
+    highlights: [
+      "Implemented route + backend RBAC, tenant isolation, and redirect hardening.",
+      "Built e-sign + webhook pipelines with HMAC verification and idempotent retries.",
+      "Added automated coverage across 26 test files and codified delivery workflows."
     ]
   }
 ];
 
+const orderedTimelineData = [...timelineData].sort(
+  (a, b) => parseTimelineStartYear(b.year) - parseTimelineStartYear(a.year)
+);
+
+function parseTimelineStartYear(yearLabel) {
+  const match = yearLabel.match(/\d{4}/);
+  return match ? Number(match[0]) : 0;
+}
+
 const projectData = [
   {
-    name: "Job Application AI Generator",
+    name: "QuoteNclose Multi-Tenant SaaS",
     summary:
-      "CLI workflow that creates role-specific application folders, copies tailored templates, and updates a tracking pipeline automatically.",
-    outcome: "Turned a manual process into a repeatable one-command workflow.",
-    tags: ["Automation", "Python", "CLI"],
-    repoUrl: "https://github.com/",
-    demoUrl: "#"
+      "Built a contractor quoting and contract-signing platform with tenant-aware routing, Convex RBAC, pricing engines, document generation, and embedded e-sign workflows.",
+    outcome:
+      "Delivered secure end-to-end quote and contract lifecycle with deterministic failure handling and 26 test files across critical modules.",
+    tags: ["Next.js", "TypeScript", "Convex", "RBAC", "Webhook Security"],
+    repoUrl: null,
+    demoUrl: null
+  },
+  {
+    name: "Strategic Intelligence and Finance System",
+    summary:
+      "Private docs-first operating system for business planning, assumptions governance, evidence tracing, and 3-year financial scenario modeling.",
+    outcome:
+      "Created investor-ready governance with ticketed scenario controls, before/after archives, KPI deltas, and auditable changelog discipline.",
+    tags: ["Financial Modeling", "Governance", "Scenario Analysis", "Documentation Ops"],
+    repoUrl: null,
+    demoUrl: null
+  },
+  {
+    name: "Safeguard Quote Platform",
+    summary:
+      "Built the full quote-to-contract lifecycle for impact windows and doors with secure homeowner and rep experiences, proposal controls, and signed artifact handling.",
+    outcome:
+      "Delivered operationally-ready workflows with tokenized access patterns, pricing/proposal versioning, and reliability-focused logging + metrics.",
+    tags: ["Product", "Full Stack", "Postgres", "RLS", "Automation"],
+    repoUrl: null,
+    demoUrl: null
+  },
+  {
+    name: "Safeguard Partner Referral Platform",
+    summary:
+      "Shipped a full-stack partner-growth product with public referral intake, authenticated partner dashboards, admin lifecycle management, and policy-enforced data access.",
+    outcome:
+      "Implemented robust auth/session handling, deep-link safety, analytics segmentation, and 18 test files across Python + Vitest + Playwright.",
+    tags: ["React", "FastAPI", "Supabase", "Pytest", "Playwright"],
+    repoUrl: null,
+    demoUrl: null
+  },
+  {
+    name: "Reehash 3D Presentation Platform",
+    summary:
+      "Created a scroll-driven 3D web experience that explains impact-window engineering through interactive visuals and personalized rep-guided sales flows.",
+    outcome:
+      "Delivered a reusable contractor presentation asset with synchronized camera/section logic and runtime material customization controls.",
+    tags: ["Three.js", "React", "TypeScript", "Blender", "Zustand"],
+    repoUrl: null,
+    demoUrl: null
   },
   {
     name: "TRD Analyst (Local-First AI Analyst)",
     summary:
-      "2-week prototype that structures open-ended questions into analyst-grade tickets, plans, and sourced reports using a human-in-the-loop workflow.",
+      "Two-week prototype that structures open-ended questions into analyst-grade tickets, plans, and sourced reports with explicit quality gates.",
     outcome:
-      "Delivered faster, more consistent, and auditable decision-support outputs without sacrificing expert oversight.",
-    tags: ["AI", "Decision Support", "Research Ops"],
-    repoUrl: "https://github.com/",
-    demoUrl: "#"
+      "Improved research consistency and auditability through deterministic workflow artifacts and human-in-the-loop decision checkpoints.",
+    tags: ["AI Workflow", "Research Ops", "Prompt Engineering", "Local-first"],
+    repoUrl: null,
+    demoUrl: null
   },
   {
-    name: "Safeguard Quote Delivery Flow",
+    name: "Job Application AI Generator",
     summary:
-      "Structured roadmap-to-release workflow with scoped tickets, implementation checkpoints, and manual verification patterns.",
-    outcome: "Improved delivery predictability and reduced scope drift.",
-    tags: ["Product", "Full Stack", "Execution"],
-    repoUrl: "https://github.com/",
-    demoUrl: "#"
-  },
-  {
-    name: "Finance Scenario Engine",
-    summary:
-      "Scenario modeling workflow for pricing, commissions, burn, and runway to support operational decision-making.",
-    outcome: "Enabled faster go/no-go decisions with consistent assumptions.",
-    tags: ["Data", "Modeling", "Decision Support"],
-    repoUrl: "https://github.com/",
-    demoUrl: "#"
-  },
-  {
-    name: "Career Trajectory Portfolio",
-    summary:
-      "This interactive site showcasing engineering growth, project proof, and delivery principles through a dynamic user interface.",
-    outcome: "Created a polished personal brand asset optimized for recruiters and hiring teams.",
-    tags: ["Frontend", "JavaScript", "Design"],
-    repoUrl: "https://github.com/",
-    demoUrl: "#"
+      "CLI workflow that creates role-specific application folders, copies tailored templates, and updates job tracking artifacts automatically.",
+    outcome: "Turned a manual process into a consistent one-command workflow.",
+    tags: ["Automation", "Python", "CLI", "Workflow"],
+    repoUrl: null,
+    demoUrl: null
   }
 ];
 
@@ -121,7 +179,7 @@ const projectFilters = document.querySelector("#project-filters");
 const projectGrid = document.querySelector("#project-grid");
 
 function renderTimeline() {
-  timelineList.innerHTML = timelineData
+  timelineList.innerHTML = orderedTimelineData
     .map(
       (item, idx) => `
         <li>
@@ -145,7 +203,7 @@ function renderTimeline() {
 }
 
 function setActiveTimeline(index) {
-  const selected = timelineData[index];
+  const selected = orderedTimelineData[index];
   const buttons = timelineList.querySelectorAll("button[data-index]");
 
   buttons.forEach((button) => {
@@ -208,8 +266,7 @@ function renderProjects() {
           </ul>
           <p class="project-outcome"><strong>Outcome:</strong> ${project.outcome}</p>
           <div class="project-links">
-            <a href="${project.repoUrl}" target="_blank" rel="noreferrer">Repository</a>
-            <a href="${project.demoUrl}" target="_blank" rel="noreferrer">Case Study</a>
+            ${renderProjectLinks(project)}
           </div>
         </article>
       `
@@ -220,6 +277,28 @@ function renderProjects() {
     projectGrid.innerHTML =
       "<p>No projects match this filter yet. Add one in script.js.</p>";
   }
+}
+
+function renderProjectLinks(project) {
+  const links = [];
+
+  if (project.repoUrl) {
+    links.push(
+      `<a href="${project.repoUrl}" target="_blank" rel="noreferrer">Repository</a>`
+    );
+  }
+
+  if (project.demoUrl) {
+    links.push(
+      `<a href="${project.demoUrl}" target="_blank" rel="noreferrer">Case Study</a>`
+    );
+  }
+
+  if (!links.length) {
+    return '<span class="project-private">Private build. Walkthrough available on request.</span>';
+  }
+
+  return links.join("");
 }
 
 function setupRevealAnimation() {

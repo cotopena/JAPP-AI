@@ -392,6 +392,15 @@ main {
   color: #10318a;
 }
 
+.project-private {
+  display: inline-block;
+  padding: 0.32rem 0.58rem;
+  border-radius: 999px;
+  border: 1px dashed var(--border);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
 .approach-grid {
   margin-top: var(--space-lg);
   display: grid;
