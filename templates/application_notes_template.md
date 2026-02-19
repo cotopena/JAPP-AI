@@ -5,6 +5,12 @@ Position: ${position}
 Date: ${date}
 Job description file: ${job_file}
 
+## Application Status Snapshot
+- Status: ${status}
+- Applied on: ${applied_date}
+- Response state: ${response_state}
+- Next action: ${next_action}
+
 ## Role Summary
 - 
 
@@ -21,6 +27,14 @@ ${matched_experience}
 ${extra_experience}
 
 ## Questions to Ask
+- 
+
+## Communication Log
+| Date | Direction | Channel | Summary | Follow-up Needed |
+|---|---|---|---|---|
+|  | Inbound/Outbound | Email/LinkedIn/Phone |  | Yes/No |
+
+## Reply Draft Scratchpad
 - 
 
 ## Customization Checklist

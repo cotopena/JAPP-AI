@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import csv
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -11,6 +12,26 @@ from string import Template
 ROOT = Path(__file__).resolve().parents[1]
 TEMPLATES_DIR = ROOT / "templates"
 DEFAULT_EXPERIENCE_BANK = ROOT / "experience_bank.md"
+DEFAULT_BASE_DIR = ROOT / "applications"
+DEFAULT_TRACKER_FILE = ROOT / "tracking" / "application_tracker.csv"
+DEFAULT_STATUS = "Drafting"
+DEFAULT_RESPONSE_STATE = "No response yet"
+DEFAULT_NEXT_ACTION = "Tailor resume and cover letter"
+
+TRACKER_FIELDS = [
+    "company",
+    "position",
+    "status",
+    "date_applied",
+    "last_response_date",
+    "response_state",
+    "next_action",
+    "next_action_due",
+    "folder",
+    "last_updated",
+    "last_response_summary",
+    "notes",
+]
 
 STOPWORDS = {
     "a",
@@ -221,6 +242,93 @@ def format_matches(matches: list[tuple[str, str]]) -> str:
     return "\n".join(f"- [{section}] {bullet}" for section, bullet in matches)
 
 
+def parse_iso_date(value: str, flag_name: str) -> str:
+    try:
+        return date.fromisoformat(value).isoformat()
+    except ValueError:
+        raise ValueError(f"Invalid {flag_name}: {value}. Use YYYY-MM-DD format.")
+
+
+def read_tracker_rows(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        rows = []
+        for row in reader:
+            normalized = {
+                field: (row.get(field, "") or "").strip() for field in TRACKER_FIELDS
+            }
+            if not normalized["company"] and not normalized["position"]:
+                continue
+            rows.append(normalized)
+        return rows
+
+
+def write_tracker_rows(path: Path, rows: list[dict[str, str]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=TRACKER_FIELDS)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def upsert_tracker_entry(
+    path: Path,
+    *,
+    company: str,
+    position: str,
+    folder: str,
+    last_updated: str,
+    status: str | None,
+    date_applied: str | None,
+    next_action: str | None,
+) -> str:
+    rows = read_tracker_rows(path)
+    company_key = company.casefold()
+    position_key = position.casefold()
+
+    for row in rows:
+        if (
+            row["company"].casefold() == company_key
+            and row["position"].casefold() == position_key
+        ):
+            row["folder"] = folder
+            row["last_updated"] = last_updated
+            if status is not None:
+                row["status"] = status
+            if date_applied is not None:
+                row["date_applied"] = date_applied
+            if next_action is not None:
+                row["next_action"] = next_action
+            if not row["response_state"]:
+                row["response_state"] = DEFAULT_RESPONSE_STATE
+
+            rows.sort(key=lambda item: (item["company"].casefold(), item["position"].casefold()))
+            write_tracker_rows(path, rows)
+            return "updated"
+
+    new_row = {
+        "company": company,
+        "position": position,
+        "status": status or DEFAULT_STATUS,
+        "date_applied": date_applied or "",
+        "last_response_date": "",
+        "response_state": DEFAULT_RESPONSE_STATE,
+        "next_action": next_action or DEFAULT_NEXT_ACTION,
+        "next_action_due": "",
+        "folder": folder,
+        "last_updated": last_updated,
+        "last_response_summary": "",
+        "notes": "",
+    }
+    rows.append(new_row)
+    rows.sort(key=lambda item: (item["company"].casefold(), item["position"].casefold()))
+    write_tracker_rows(path, rows)
+    return "created"
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Create a new application folder with resume, cover letter, and notes."
@@ -242,8 +350,30 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--base-dir",
-        default=str(ROOT),
-        help="Base directory for new company folders",
+        default=str(DEFAULT_BASE_DIR),
+        help="Base directory for new application folders",
+    )
+    parser.add_argument(
+        "--tracker-file",
+        default=str(DEFAULT_TRACKER_FILE),
+        help="CSV tracker path for application status tracking",
+    )
+    parser.add_argument(
+        "--skip-tracker-update",
+        action="store_true",
+        help="Do not create or update the application tracker CSV",
+    )
+    parser.add_argument(
+        "--status",
+        help="Application status to set in tracker (for example: Drafting, Applied, Interview)",
+    )
+    parser.add_argument(
+        "--applied-date",
+        help="Date applied in YYYY-MM-DD format (optional)",
+    )
+    parser.add_argument(
+        "--next-action",
+        help="Next action to record in tracker (optional)",
     )
     parser.add_argument(
         "--skip-questions",
@@ -290,6 +420,13 @@ def main() -> int:
     if args.max_matches < 1:
         print("--max-matches must be at least 1")
         return 1
+
+    if args.applied_date:
+        try:
+            args.applied_date = parse_iso_date(args.applied_date, "--applied-date")
+        except ValueError as exc:
+            print(exc)
+            return 1
 
     if args.company:
         company = args.company
@@ -452,6 +589,11 @@ def main() -> int:
             "Position: ${position}\n"
             "Date: ${date}\n"
             "Job description file: ${job_file}\n\n"
+            "## Application Status Snapshot\n"
+            "- Status: ${status}\n"
+            "- Applied on: ${applied_date}\n"
+            "- Response state: ${response_state}\n"
+            "- Next action: ${next_action}\n\n"
             "## Role Summary\n- \n\n"
             "## Key Requirements\n- \n\n"
             "## Priority Keywords From Job Description\n${priority_keywords}\n\n"
@@ -460,11 +602,19 @@ def main() -> int:
             "## Questions to Ask\n- \n"
         )
 
+    effective_status = args.status or DEFAULT_STATUS
+    effective_applied_date = args.applied_date or "[Not applied yet]"
+    effective_next_action = args.next_action or DEFAULT_NEXT_ACTION
+
     notes_content = Template(notes_template).safe_substitute(
         company=company,
         position=position,
         date=date.today().strftime("%B %d, %Y"),
         job_file=job_name,
+        status=effective_status,
+        applied_date=effective_applied_date,
+        response_state=DEFAULT_RESPONSE_STATE,
+        next_action=effective_next_action,
         priority_keywords=priority_keywords,
         matched_experience=matched_experience,
         extra_experience=extra_experience or "- ",
@@ -500,6 +650,28 @@ def main() -> int:
         print(f"{skipped_label}:")
         for path in skipped_files:
             print(f"  - {path}")
+
+    if not args.skip_tracker_update:
+        tracker_path = Path(args.tracker_file).expanduser()
+        try:
+            folder_value = str(target_dir.relative_to(ROOT))
+        except ValueError:
+            folder_value = str(target_dir)
+
+        if args.dry_run:
+            print(f"Would update tracker: {tracker_path}")
+        else:
+            tracker_action = upsert_tracker_entry(
+                tracker_path,
+                company=company,
+                position=position,
+                folder=folder_value,
+                last_updated=date.today().isoformat(),
+                status=args.status,
+                date_applied=args.applied_date,
+                next_action=args.next_action,
+            )
+            print(f"Tracker entry {tracker_action}: {tracker_path}")
 
     return 0
 

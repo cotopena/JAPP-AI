@@ -2,7 +2,18 @@
 
 Use this file as the full inventory of your experience and achievements. Add extra details that you want to remember even if they do not appear on the resume.
 
-## Reehash.com (Co-Founder and CEO, 05/2023 - Present)
+## SafeGuard Impact (Founder and Product Lead, 01/2025 - Present)
+- Sole creator of the Safeguard Quote platform, owning architecture, implementation, and delivery across frontend, backend, database, and tooling.
+- Built the full quote-to-contract lifecycle for impact windows and doors with rep and homeowner experiences.
+- Implemented tokenized access patterns, RLS-enforced Postgres policies, request context middleware, and environment-driven deployment controls.
+- Delivered pricing and proposal capabilities including item configuration, package options, discounts, financing calculators, and proposal versioning.
+- Built contract workflows with hosted signing, PDF generation, secure artifact storage, and audit-focused handling.
+- Integrated GoHighLevel webhook intake, Postmark email delivery, and n8n operational handoff automation.
+- Added observability and reliability tooling including structured logs, request IDs, Prometheus metrics, and test coverage across critical flows.
+- Additional details:
+  - 
+
+## Reehash.com (Co-Founder and CEO, 05/2023 - 12/2024)
 - Spearheaded software development of a virtual sales platform for the roofing industry and expanded it to impact windows and painting.
 - Integrated AI-powered tools to assist sales reps in handling rebuttals and complex questions during live video calls.
 - Implemented an automated second-attempt strategy via online video calls to reclaim lost leads.

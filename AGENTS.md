@@ -4,7 +4,8 @@
 - Root files: `Augusto_Pena_Resume.md` (base resume), `experience_bank.md` (full experience inventory), and `README.md` (usage overview).
 - Automation: `scripts/new_application.py` generates new application folders and files.
 - Templates: `templates/cover_letter_template.md` and `templates/application_notes_template.md` provide reusable scaffolding.
-- Applications: Each company has its own directory, with a position subfolder and tailored outputs. Example: `Acme Corp/Senior Sales Manager/`.
+- Applications: All application folders live under `applications/`. Each company has its own directory, with a position subfolder and tailored outputs. Example: `applications/Acme Corp/Senior Sales Manager/`.
+- Tracking: Pipeline and communication tracking files live under `tracking/` (`application_tracker.csv`, `communication_log.csv`).
 
 ## Build, Test, and Development Commands
 - `python3 scripts/new_application.py`: Interactive wizard to create a new application package.
@@ -26,8 +27,7 @@
 - If you add scripts or validation checks, document how to run them in `README.md`.
 
 ## Commit & Pull Request Guidelines
-- This workspace is not a Git repository, so there is no commit history to infer conventions from.
-- If you initialize Git later, use short, imperative commit summaries (e.g., "Add application generator script").
+- Use short, imperative commit summaries (e.g., "Add application generator script").
 - PRs should describe the job target, list updated files, and note any new templates or workflow changes.
 
 ## Security & Configuration Tips
