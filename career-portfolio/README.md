@@ -7,6 +7,9 @@ This folder is a self-contained personal portfolio website. It does not depend o
 - `index.html`: Page structure and content sections.
 - `styles.css`: Visual style, layout, and responsive behavior.
 - `script.js`: Interactive timeline, project filtering, and section reveals.
+- `workflow/`: Imported command + agent workflow for ticket/plan/implementation loops.
+- `.documents/`: Imported planning artifacts (`.tickets`, `.plans`, `prs`, `research`, `thoughts`).
+- `task-board.md`, `plan.md`, `techstack-decisions.md`: Local context docs referenced by workflow commands.
 
 ## Run Locally
 
