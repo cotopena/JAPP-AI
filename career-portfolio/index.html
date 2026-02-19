@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Interactive career trajectory and software engineering project portfolio for Augusto Pena."
+  />
+  <title>Augusto Pena | Career Trajectory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-layer" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid-sheen"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">Augusto Pena</div>
+    <nav class="top-nav" aria-label="Primary">
+      <a href="#trajectory">Trajectory</a>
+      <a href="#projects">Projects</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero reveal">
+      <p class="eyebrow">Software Engineer Portfolio</p>
+      <h1>From revenue operator to product-minded engineer.</h1>
+      <p class="hero-copy">
+        This site maps the trajectory of how I solve problems: understand the business
+        deeply, then build software that moves metrics and teams forward.
+      </p>
+      <div class="hero-metrics" role="list" aria-label="Highlights">
+        <article role="listitem">
+          <p class="metric-value">7+</p>
+          <p class="metric-label">Years solving business problems</p>
+        </article>
+        <article role="listitem">
+          <p class="metric-value">20+</p>
+          <p class="metric-label">Projects shipped and documented</p>
+        </article>
+        <article role="listitem">
+          <p class="metric-value">3x</p>
+          <p class="metric-label">Faster workflows in recent builds</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="trajectory" class="panel reveal">
+      <div class="panel-head">
+        <p class="eyebrow">Interactive Career Trajectory</p>
+        <h2>Click each milestone to inspect scope, technical depth, and outcome.</h2>
+      </div>
+
+      <div class="trajectory-layout">
+        <ol id="timeline-list" class="timeline" aria-label="Career timeline"></ol>
+        <article id="timeline-detail" class="timeline-detail" aria-live="polite">
+          <h3>Select a milestone</h3>
+          <p>Use the timeline to load details.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="panel reveal">
+      <div class="panel-head">
+        <p class="eyebrow">Evidence Through Code</p>
+        <h2>Projects that demonstrate architecture, execution, and delivery quality.</h2>
+      </div>
+
+      <div id="project-filters" class="project-filters" role="tablist" aria-label="Filter projects"></div>
+      <div id="project-grid" class="project-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="approach" class="panel reveal">
+      <div class="panel-head">
+        <p class="eyebrow">How I Build</p>
+        <h2>Principles I use to keep quality high while shipping at pace.</h2>
+      </div>
+      <div class="approach-grid">
+        <article>
+          <h3>Product Context First</h3>
+          <p>I define user intent, operational constraints, and success metrics before coding.</p>
+        </article>
+        <article>
+          <h3>Design for Change</h3>
+          <p>I prefer composable modules, explicit interfaces, and simple migration paths.</p>
+        </article>
+        <article>
+          <h3>Fast Feedback Loops</h3>
+          <p>I automate checks, validate assumptions quickly, and instrument for real usage.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer reveal">
+    <p>Interested in building with me? Let us talk.</p>
+    <div class="contact-links">
+      <a href="mailto:augusto.pena@email.com">Email</a>
+      <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript-note">
+      JavaScript is disabled. Enable it to use the interactive timeline and project filters.
+    </p>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
