@@ -1,21 +1,28 @@
+# AUGUSTO PENA
+
+Ft. Lauderdale, FL (Greater Miami Area) | cotopena@gmail.com | (305)-744-6406  
+US work authorized (no sponsorship required)
+
+---
+
 February 19, 2026
 
-SEI
+SEI  
 Miami, FL (Hybrid)
 
-Re: AI and Technology Consultant
+**Re: AI and Technology Consultant (Job ID: 4087866005)**
 
 Dear Hiring Team,
 
-I am applying for SEI's AI and Technology Consultant role because it aligns with how I work: combine technical depth, business judgment, and clear communication to solve real client problems. I have spent my career translating complex requirements into practical solutions, leading teams through ambiguity, and delivering measurable outcomes.
+SEI's AI and Technology Consultant role aligns with how I deliver value: translate complex business needs into practical technical systems and lead execution across stakeholders from leadership to frontline teams. I bring a consulting mindset with hands-on delivery depth across solution design, application development, and operational change.
 
-Most recently, I built QuoteNclose, a multi-tenant SaaS platform that covers quoting, pricing, contracts, and embedded e-sign workflows. A core differentiator was replacing fixed-size windows/doors pricebooks with an algorithmic pricing model that uses fewer than 100 parameters while maintaining 99.99% accuracy across thousands of SKUs and virtually infinite customizations. That approach improved cost predictability, helped finance plan budgets and cash flow, and reduced ordering, permitting, and delivery timelines by up to 3 weeks.
+## Fit Highlights
 
-At SafeGuard Impact and Reehash, I led cross-functional initiatives that connected leadership priorities to frontline execution. As a consultant at SafeGuard Impact, I delivered three core systems: a unified source-of-truth database, a CPQ workflow, and a referral partner application. These initiatives improved internal communication and data handoffs, increased operational efficiency by 50%, increased referrals by 300%, and supported 20% monthly sales growth. Earlier roles added additional scale discipline: 100% year-over-year growth at TOPO UAV, CRM/process transformation at Roof1303, and formal project management with waterfall-style planning at WeeklySpoon.
+- **QuoteNclose:** replaced fixed-size windows/doors pricebooks with an algorithmic pricing model (<100 parameters) that achieved 99.99% accuracy in production quote workflows and improved downstream planning for sales, operations, and finance.
+- **SafeGuard Impact (Consulting Engagement):** delivered three systems that resolved cross-department fragmentation: a unified source-of-truth database, CPQ workflow, and referral partner app; outcomes included 300% referral growth, 20% monthly sales growth during rollout, and 50% operational efficiency improvement through AI-assisted workflows.
+- **Cross-functional execution:** led early digital sales and CRM process transformation at Roof1303, revenue scale leadership at Mendiola Group, and structured waterfall-style project management at WeeklySpoon.
 
-SEI's emphasis on Excellence, Participation, Integrity, and Collaboration is exactly the environment I am looking for. I bring a Hungry, Humble, Smart mindset, strong written and verbal communication, and 8+ years of experience across business and technology execution. I am authorized for permanent employment in the United States and would welcome the opportunity to discuss how I can contribute to SEI's client teams in Miami.
+I am especially interested in SEI's model of combining high-accountability client delivery with internal participation and collaboration. I would welcome the opportunity to discuss how I can contribute to SEI's Miami engagements.
 
-Sincerely,
+Sincerely,  
 Augusto Pena
-cotopena@gmail.com
-(305)-744-6406

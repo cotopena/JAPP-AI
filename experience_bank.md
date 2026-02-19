@@ -357,7 +357,9 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Additional details:
   - 
 
-## TOPO UAV, LLC (Account Executive, 01/2019 - 12/2022)
+## Optional Experience (Use Only If Explicitly Relevant)
+### TOPO UAV, LLC (Account Executive, 01/2019 - 12/2022)
+- Optional note: do not include by default; use only when role context specifically benefits from this background.
 - Achieved 100% year-on-year sales growth from 2019 to 2022 through targeted outreach.
 - Maintained 90% client retention with 40% of business from repeat customers and referrals.
 - Secured 32 photogrammetry projects, boosting revenue through short-term engagements.

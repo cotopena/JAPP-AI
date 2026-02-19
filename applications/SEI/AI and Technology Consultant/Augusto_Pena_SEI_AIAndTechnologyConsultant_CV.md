@@ -4,18 +4,30 @@ cotopena@gmail.com | (305)-744-6406 | Ft. Lauderdale, FL (Greater Miami Area)
 US work authorized (no sponsorship required)
 
 ## Professional Profile
-AI and technology consultant with 10+ years of experience across software delivery, operations, and client-facing leadership. I design practical systems that connect business goals to technical execution, especially in environments where teams, tools, and data are fragmented. Track record includes algorithmic pricing innovation (99.99% accuracy), consulting-led platform implementation, referral-led growth, and measurable operational efficiency improvements.
+AI and technology consultant with 10+ years of experience across software delivery, operations, and client-facing leadership. I design practical systems that connect business goals to technical execution in environments where teams, tools, and data are fragmented. My approach combines business discovery, technical architecture, and implementation ownership to deliver measurable outcomes.
 
 ## Target Role
-AI and Technology Consultant
+AI and Technology Consultant (Job ID: 4087866005)
 
-## Consulting Impact Summary
-- Replaced fixed-size windows and doors pricebooks at QuoteNclose with an algorithmic pricing model using fewer than 100 parameters, achieving 99.99% pricing accuracy across thousands of SKUs and virtually infinite customization scenarios.
-- Improved cross-department execution at QuoteNclose by producing higher-quality quote and contract data for sales, operations, and finance; supported better cost planning and cash flow visibility and reduced ordering, permitting, and delivery timelines by up to 3 weeks.
-- Engaged as a consultant at SafeGuard Impact to deliver three core systems: a unified source-of-truth database, a CPQ workflow, and a partner referral application.
-- Increased referrals by 300% and supported 20% monthly sales growth at SafeGuard Impact by launching a circular, self-feeding referral channel.
-- Implemented AI-assisted internal workflows at SafeGuard Impact that increased operational efficiency by 50% and reduced overhead by reducing communication friction across departments.
-- Drove measurable commercial outcomes in prior roles, including 25% client sales growth and 50% overhead reduction (Reehash), 100% year-over-year growth (TOPO UAV), and 40% close rate versus an approximately 20% benchmark (Roof1303 team).
+## Selected Case Work
+
+### QuoteNclose - Algorithmic Pricing and Downstream Data Quality
+- Problem: windows/doors quoting depended on fixed-size pricebooks with large coverage gaps across high-variation products.
+- Approach: designed and implemented an algorithmic pricing model using fewer than 100 parameters to generalize across thousands of SKUs and customization combinations.
+- Impact: achieved 99.99% pricing accuracy in production quote workflows; improved quote/contract data quality for sales, operations, and finance; helped reduce ordering, permitting, and delivery timelines by up to 3 weeks.
+
+### SafeGuard Impact - Unified Operations and Growth Systems (Consulting Engagement)
+- Problem: core departments were using disconnected CRMs/tools, causing information loss, poor handoffs, and inconsistent decision inputs.
+- Approach: delivered three systems as a consultant: (1) unified source-of-truth database, (2) CPQ workflow with structured point-of-sale data capture and department-specific routing, and (3) referral partner application for circular lead generation.
+- Impact: increased referrals by 300%; supported 20% monthly sales growth during referral-program rollout; increased operational efficiency by 50% through AI-assisted cross-department workflows.
+
+### Reehash - Technology-Enabled Revenue Operations
+- Led product strategy and software delivery for virtual sales workflows that improved consultation quality and channel performance.
+- Increased client sales by 25% and reduced overhead by 50% through workflow redesign and implementation support.
+
+### Earlier Commercial Execution Results
+- Roof1303: closed first 83 online sales; coached team to 40% close rate versus approximately 20% benchmark.
+- Mendiola Group: exceeded quota by 80%; helped scale annual sales volume from 300 to 6,000.
 
 ## Core Competencies
 - Business requirements to technical requirements translation
@@ -35,35 +47,27 @@ AI and Technology Consultant
 Miami, FL | 02/2026 - Present
 - Built and deployed a multi-tenant SaaS platform for quoting, pricing, contracts, and embedded e-sign workflows.
 - Designed and implemented an algorithmic pricing model that replaced pricebook dependency for windows/doors workflows.
-- Achieved 99.99% pricing accuracy across high-variation products with fewer than 100 model parameters.
-- Improved quote/contract data quality for downstream teams, helping reduce ordering, permitting, and delivery timelines by up to 3 weeks.
-- Implemented secure route and backend role controls, contract lifecycle automation, and audit-focused workflow telemetry.
+- Built secure route and backend role controls, contract lifecycle automation, and audit-focused telemetry.
+- Translated stakeholder requirements from owner, rep, and operations workflows into phased technical delivery.
 
 ### Technology Consultant (Contract), SafeGuard Impact
 Miami, FL | 01/2025 - Present
 - Delivered a unified source-of-truth database that consolidated information from departments using different CRMs and tools.
 - Built a CPQ workflow to capture structured point-of-sale data and route department-specific data to the right internal teams.
 - Designed and launched a referral partner application to create a circular, self-feeding lead channel.
-- Increased referrals by 300% and supported 20% monthly sales growth through referral-led funnel expansion.
-- Implemented AI-assisted internal workflows that increased operational efficiency by 50% and reduced overhead.
+- Implemented AI-assisted internal workflows to reduce communication friction and improve department handoffs.
 
 ### Co-Founder and CEO, Reehash.com (formerly RoofConnectUSA)
 Miami, FL | 05/2023 - 12/2024
 - Led product strategy and software delivery for a virtual sales platform in roofing, later expanding to impact windows and painting.
 - Integrated AI-assisted sales support workflows for rebuttal handling and live consultation quality.
-- Increased client sales by 25% and reduced overhead costs by 50% through digital workflow redesign.
+- Ran discovery and implementation alignment with contractor leadership teams to support adoption.
 
 ### Sales Executive and Sales Manager, Roof1303.com
 Miami, FL | 10/2021 - 05/2023
 - Closed the first 83 online sales before full sales-team scale-out.
 - Transitioned pipeline operations from Trello to Salesforce to improve visibility and coordination.
 - Recruited and coached a team of 4 reps that achieved a 40% close rate versus an approximately 20% benchmark.
-
-### Account Executive, TOPO UAV, LLC
-Miami, FL | 01/2019 - 12/2022
-- Achieved 100% year-over-year growth from 2019 through 2022 in technical B2B sales.
-- Maintained 90% client retention; 40% of business came from repeat customers and referrals.
-- Delivered technical solution selling to contractors, engineers, and building management teams.
 
 ### VP of Sales, Mendiola Group, Inc.
 Miami, FL | 09/2017 - 09/2021

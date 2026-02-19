@@ -190,6 +190,8 @@ def parse_experience_bank(path: Path) -> list[tuple[str, str]]:
             continue
         if bullet.lower().startswith("additional details"):
             continue
+        if section.casefold().startswith("optional experience"):
+            continue
         entries.append((section, bullet))
     return entries
 

@@ -4,7 +4,7 @@ cotopena@gmail.com | (305)-744-6406 | Ft. Lauderdale, FL | Miami metro (Hybrid/O
 US work authorized (no sponsorship required)
 
 ## Professional Summary
-AI and technology consultant profile with 10+ years across software delivery, business operations, and client-facing leadership. Built and shipped multi-tenant SaaS products, translated ambiguous business needs into technical roadmaps, and delivered measurable results in fast-changing environments. Track record includes 99.99% pricing accuracy via algorithmic modeling, 300% referral growth, 20% monthly sales growth, 50% operational efficiency gains, and 100% year-over-year growth. Known for clear communication, analytical decision-making, and collaborative leadership across technical and non-technical stakeholders.
+AI and technology consultant profile with 10+ years across software delivery, business operations, and client-facing leadership. Built and shipped multi-tenant SaaS products, translated ambiguous business needs into technical roadmaps, and delivered measurable results in fast-changing environments. Track record includes 99.99% pricing accuracy via algorithmic modeling, 300% referral growth, 20% monthly sales growth, and 50% operational efficiency gains. Known for clear communication, analytical decision-making, and collaborative leadership across technical and non-technical stakeholders.
 
 ## Consulting and Technical Skills
 - Consulting: Discovery workshops, business requirements to technical requirements, executive communication, stakeholder alignment, root-cause analysis, change management
@@ -41,11 +41,6 @@ AI and technology consultant profile with 10+ years across software delivery, bu
 - Closed the first 83 online roof sales before full team scale-out, validating digital sales motion and customer adoption.
 - Migrated pipeline operations from Trello to Salesforce to improve visibility, forecasting discipline, and team coordination.
 - Recruited and coached a team of 4 reps that reached a 40% close rate versus an industry benchmark near 20%.
-
-### Account Executive | TOPO UAV, LLC | Miami, FL | 01/2019-12/2022
-- Drove 100% year-over-year sales growth (2019-2022) through consultative outreach and technical solution selling.
-- Maintained 90% client retention with 40% of revenue from repeat clients and referrals.
-- Partnered with engineering and construction stakeholders on LiDAR/photogrammetry projects, including post-Champlain Towers South evaluation work, using drone-based field capture workflows aligned with IoT/edge-style data collection.
 
 ### Digital Project Manager | WeeklySpoon, LLC | Miami, FL | 02/2014-01/2016
 - Managed cross-functional delivery across developers, designers, marketers, and account teams.

@@ -24,7 +24,7 @@ Technology consultant and product operator with 10+ years of experience across s
 - Delivered a consulting engagement at SafeGuard Impact focused on three core systems: a unified source-of-truth database, a CPQ workflow, and a partner referral application.
 - Increased referrals by 300% and supported 20% monthly sales growth during the referral-program rollout through a circular, self-feeding lead channel.
 - Implemented AI-assisted internal workflows that increased operational efficiency by 50% across cross-department handoff workflows and reduced communication resistance.
-- Drove measurable commercial outcomes in prior roles, including 25% client sales growth and 50% overhead reduction (Reehash), 100% year-over-year growth (TOPO UAV), and 40% close rate versus an approximately 20% benchmark (Roof1303 team).
+- Drove measurable commercial outcomes in prior roles, including 25% client sales growth and 50% overhead reduction (Reehash), and a 40% close rate versus an approximately 20% benchmark (Roof1303 team).
 
 ## Professional Experience
 
@@ -55,12 +55,6 @@ Miami, FL | 10/2021 - 05/2023
 - Closed the first 83 online sales before full sales-team scale-out.
 - Transitioned pipeline operations from Trello to Salesforce to improve visibility and coordination.
 - Recruited and coached a team of 4 reps that achieved a 40% close rate versus an approximately 20% benchmark.
-
-### Account Executive, TOPO UAV, LLC
-Miami, FL | 01/2019 - 12/2022
-- Achieved 100% year-over-year growth from 2019 through 2022 in technical B2B sales.
-- Maintained 90% client retention; 40% of business came from repeat customers and referrals.
-- Delivered technical solution selling to contractors, engineers, and building management stakeholders.
 
 ### VP of Sales, Mendiola Group, Inc.
 Miami, FL | 09/2017 - 09/2021

@@ -28,7 +28,7 @@ Job description file: Job_Description_SEI_AIAndTechnologyConsultant.md
 
 ## Candidate Positioning Strategy
 - Lead with business + technology translation: founder/operator roles where technical design and operational outcomes were both owned.
-- Anchor credibility with metrics: 99.99% pricing accuracy (algorithmic model with <100 parameters), up to 3 weeks cycle-time reduction, 300% referral growth, 20% monthly sales growth, 50% efficiency gain, 100% YoY growth, and 40% close rate vs 20% benchmark.
+- Anchor credibility with metrics: 99.99% pricing accuracy (algorithmic model with <100 parameters), up to 3 weeks cycle-time reduction, 300% referral growth, 20% monthly sales growth, 50% efficiency gain, and 40% close rate vs 20% benchmark.
 - Emphasize app development and solution design depth: Next.js, React, TypeScript, Python/FastAPI, SQL/Postgres, RBAC, webhooks, document automation.
 - Demonstrate agile/waterfall fluency: iterative shipping in current product builds plus historical Gantt/milestone planning in project management role.
 - Reflect SEI values directly in tone and examples: excellence in delivery, participation across teams, integrity in ownership, collaboration with technical and non-technical stakeholders.
@@ -59,7 +59,6 @@ Job description file: Job_Description_SEI_AIAndTechnologyConsultant.md
 - [SafeGuard Impact] Built a circular referral-led growth motion that increased referrals by 300% and supported 20% monthly sales growth.
 - [Reehash] Integrated AI-assisted sales support and delivered measurable client outcomes (25% higher sales, 50% lower overhead).
 - [Roof1303] Improved CRM/process maturity and coached a team to 40% close rate vs ~20% benchmark.
-- [TOPO UAV] Delivered 100% YoY growth through technical consultative selling and sustained 90% retention.
 - [WeeklySpoon] Managed waterfall-style planning with Gantt charts, milestones, and cross-functional execution.
 
 ## Known Gaps and Mitigation

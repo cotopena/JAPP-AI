@@ -13,6 +13,7 @@ STYLE_DIR = ROOT / "templates" / "pdf"
 DEFAULT_STYLE_BY_PROFILE = {
     "resume": STYLE_DIR / "resume.css",
     "cv": STYLE_DIR / "cv.css",
+    "cover": STYLE_DIR / "cover.css",
 }
 
 
@@ -38,7 +39,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--profile",
-        choices=["resume", "cv", "auto"],
+        choices=["resume", "cv", "cover", "auto"],
         default="auto",
         help="Style profile to apply. Default infers profile from filename.",
     )
@@ -63,6 +64,8 @@ def infer_profile(path: Path) -> str:
     stem = path.stem.lower()
     if "cv" in stem:
         return "cv"
+    if "cover" in stem:
+        return "cover"
     return "resume"
 
 
@@ -101,13 +104,12 @@ def lint_markdown(markdown_text: str) -> list[LintIssue]:
 
 def wrap_role_headers(html_body: str) -> str:
     pattern = (
-        r"(<h3>.*?</h3>\s*<p>.*?\|\s*\d{2}/\d{4}\s*-\s*(?:Present|\d{2}/\d{4}).*?</p>)"
+        r"(<h3>[^<]+</h3>\s*<p>[^<]*\|\s*\d{2}/\d{4}\s*-\s*(?:Present|\d{2}/\d{4})(?:<br>[^<]*)*</p>)"
     )
     return re.sub(
         pattern,
         r'<div class="role-head">\1</div>',
         html_body,
-        flags=re.DOTALL,
     )
 
 
@@ -125,7 +127,8 @@ def build_html(markdown_text: str, css_text: str, title: str, profile: str) -> s
         extensions=["extra", "tables", "sane_lists", "nl2br"],
         output_format="html5",
     )
-    body = wrap_role_headers(body)
+    if profile in {"resume", "cv"}:
+        body = wrap_role_headers(body)
     return f"""<!doctype html>
 <html>
 <head>

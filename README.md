@@ -79,6 +79,9 @@ The script also creates or updates:
 - `--max-matches`: Control how many matched bullets are inserted into notes.
 - `--no-auto-match`: Skip job-description keyword matching against the experience bank.
 
+Auto-match note:
+- Bullets under an `## Optional Experience ...` section in `experience_bank.md` are intentionally excluded from automatic matching.
+
 ## Consistent PDF Rendering
 
 Use the dedicated renderer so resume/CV PDFs come out with the same typography and spacing every time.
@@ -108,6 +111,10 @@ Render resume and CV:
 ./mdtopdf \
   "applications/SS&C Technologies/Sales Executive Risk Analytics Software/Augusto_Pena_SSCTechnologies_SalesExecutiveRiskAnalyticsSoftware_CV.md" \
   --profile cv
+
+./mdtopdf \
+  "applications/SEI/AI and Technology Consultant/Augusto_Pena_SEI_AIAndTechnologyConsultant_Cover_Letter.md" \
+  --profile cover
 ```
 
 Notes:

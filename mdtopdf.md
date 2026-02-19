@@ -33,6 +33,11 @@ Auto-select style from filename:
 ./mdtopdf "/absolute/path/to/file.md" --profile auto
 ```
 
+Auto mode behavior:
+- Filenames containing `cv` -> `cv` style
+- Filenames containing `cover` -> `cover` style
+- Everything else -> `resume` style
+
 Force resume style:
 
 ```bash
@@ -43,6 +48,12 @@ Force CV style:
 
 ```bash
 ./mdtopdf "/absolute/path/to/cv.md" --profile cv
+```
+
+Force cover letter style:
+
+```bash
+./mdtopdf "/absolute/path/to/cover_letter.md" --profile cover
 ```
 
 Render multiple files in one call:
@@ -66,6 +77,7 @@ The command enforces consistency with:
 - Versioned style presets:
   - `templates/pdf/resume.css`
   - `templates/pdf/cv.css`
+  - `templates/pdf/cover.css`
 - Preflight lint checks that fail fast for common markdown traps.
 
 ## Styling Controls
@@ -74,6 +86,7 @@ To change the look globally, edit:
 
 - Resume style: `templates/pdf/resume.css`
 - CV style: `templates/pdf/cv.css`
+- Cover letter style: `templates/pdf/cover.css`
 
 Recommended changes for consistent output:
 

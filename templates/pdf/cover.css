@@ -1,0 +1,81 @@
+@page {
+  size: Letter;
+  margin: 0.5in 0.6in;
+}
+
+:root {
+  --ink: #0f172a;
+  --body: #1f2937;
+  --muted: #6b7280;
+  --rule: #d1d5db;
+  --accent: #0b5d6e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--body);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.9pt;
+  line-height: 1.46;
+}
+
+.doc-main {
+  width: 100%;
+  max-width: 6.95in;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+  font-size: 23pt;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  color: var(--ink);
+}
+
+h1 + p {
+  margin: 6px 0 14px;
+  color: var(--muted);
+  font-size: 10.3pt;
+  line-height: 1.38;
+}
+
+h2 {
+  margin: 14px 0 7px;
+  padding-bottom: 2px;
+  font-size: 10.5pt;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+ul {
+  margin: 5px 0 12px 20px;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+strong {
+  color: var(--ink);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 12px 0;
+}
