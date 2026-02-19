@@ -246,6 +246,43 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Decision-support UI
 - Customer-facing prototypes
 
+## TRD Analyst - Local-First AI Analyst Prototype (Independent Project, 01/2022, 2-Week Demo Sprint)
+- Built a local-first AI Analyst prototype over a 2-week demo sprint that turns open-ended questions into structured, auditable research outputs.
+- Designed a prompt-orchestrated workflow (`ticket -> plan -> report`) with scoped constraints, acceptance criteria, source-quality tiers, and artifact tracking.
+- Implemented reproducible research operations with Markdown artifacts, ID/counter tracking, and `pending`/`latest` pointers across tickets, plans, and reports.
+- Established primary-source-first evidence rules plus assumptions, risks, and confidence sections to keep outputs decision-ready.
+- Kept experts in the loop by requiring human review at scope definition, plan approval, and final recommendation stages.
+- Designed the workflow to run locally first for privacy and speed, with a migration path for future internal web app use if needed.
+
+### Modular Bullet Library (Pick by Job Type)
+
+#### Decision Intelligence / Market Intelligence
+- Built a local AI decision-support workflow that converts raw questions into analyst-grade tickets, validated plans, and cited reports.
+- Standardized research delivery into repeatable artifacts so stakeholders could review assumptions, risks, and confidence before acting.
+- Increased analysis consistency by enforcing scoped constraints, evidence tiers, and acceptance criteria per request.
+
+#### AI Operations / Knowledge Operations
+- Implemented prompt-engineered workflow orchestration (`ticket -> plan -> report`) with deterministic artifact handoffs.
+- Created reproducible research ops using Markdown deliverables, ID counters, and `pending`/`latest` pointer conventions.
+- Applied primary-source-first policy controls to reduce low-quality citations and improve auditability.
+
+#### Consulting / Strategy
+- Translated ambiguous business questions into structured scenario analyses with explicit assumptions and decision criteria.
+- Built a human-in-the-loop model where experts validate scope and outputs, keeping speed gains without sacrificing judgment.
+- Delivered a local-first prototype approach that organizations can operationalize quickly before investing in full platform builds.
+
+### ATS Keywords
+- Local-first AI
+- Prompt Engineering
+- AI Workflow Orchestration
+- Structured Decision Support
+- Scenario Modeling
+- Research Automation
+- Evidence-based Reporting
+- Human-in-the-loop AI
+- Knowledge Operations
+- Analyst Copilot Systems
+
 ## Roof1303.com (Sales Executive and Sales Manager, 10/2021 - 05/2023)
 - Prospected and closed the first 83 online roof sales using virtual web-based demos before product finalization.
 - Organized the sales pipeline in Trello and migrated to Salesforce to improve efficiency.

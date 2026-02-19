@@ -26,6 +26,19 @@ const timelineData = [
     ]
   },
   {
+    year: "2022",
+    title: "Local-First AI Analyst Prototype",
+    subtitle: "Structured decision support workflow",
+    meta: "Built as a 2-week demo for auditable research operations",
+    summary:
+      "Created a repeatable AI analyst workflow that turns broad questions into scoped tickets, executable plans, and sourced reports. The design kept human experts in the loop while accelerating research speed and consistency.",
+    highlights: [
+      "Implemented a prompt-orchestrated `ticket -> plan -> report` pipeline.",
+      "Added source-quality tiers, artifact tracking, and acceptance criteria controls.",
+      "Defined a local-first operating model with a migration path to internal web apps."
+    ]
+  },
+  {
     year: "2024",
     title: "Software Engineering Execution",
     subtitle: "Full-stack product building",
@@ -60,6 +73,16 @@ const projectData = [
       "CLI workflow that creates role-specific application folders, copies tailored templates, and updates a tracking pipeline automatically.",
     outcome: "Turned a manual process into a repeatable one-command workflow.",
     tags: ["Automation", "Python", "CLI"],
+    repoUrl: "https://github.com/",
+    demoUrl: "#"
+  },
+  {
+    name: "TRD Analyst (Local-First AI Analyst)",
+    summary:
+      "2-week prototype that structures open-ended questions into analyst-grade tickets, plans, and sourced reports using a human-in-the-loop workflow.",
+    outcome:
+      "Delivered faster, more consistent, and auditable decision-support outputs without sacrificing expert oversight.",
+    tags: ["AI", "Decision Support", "Research Ops"],
     repoUrl: "https://github.com/",
     demoUrl: "#"
   },

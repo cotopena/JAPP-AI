@@ -55,6 +55,7 @@ The script also creates or updates:
 
 - `Augusto_Pena_Resume.md` is the base resume that gets copied for each role.
 - `experience_bank.md` is the full experience inventory to pull from when tailoring.
+- `trd_analyst.md` is a reusable writeup for the January 2022 local-first AI Analyst prototype.
 - `templates/` contains reusable templates for cover letters and notes.
 - `scripts/new_application.py` creates the folder and files.
 - `tracking/application_tracker.csv` is the main pipeline tracker.
