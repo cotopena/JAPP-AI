@@ -14,6 +14,7 @@ TEMPLATES_DIR = ROOT / "templates"
 DEFAULT_EXPERIENCE_BANK = ROOT / "experience_bank.md"
 DEFAULT_BASE_DIR = ROOT / "applications"
 DEFAULT_TRACKER_FILE = ROOT / "tracking" / "application_tracker.csv"
+DEFAULT_CV_SOURCE = ROOT / "Augusto_Pena_CV.md"
 DEFAULT_STATUS = "Drafting"
 DEFAULT_RESPONSE_STATE = "No response yet"
 DEFAULT_NEXT_ACTION = "Tailor resume and cover letter"
@@ -331,7 +332,7 @@ def upsert_tracker_entry(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Create a new application folder with resume, cover letter, and notes."
+        description="Create a new application folder with resume, CV, cover letter, and notes."
     )
     parser.add_argument("--company", help="Company name")
     parser.add_argument("--position", help="Position title")
@@ -347,6 +348,11 @@ def parse_args() -> argparse.Namespace:
         "--resume-source",
         default=str(ROOT / "Augusto_Pena_Resume.md"),
         help="Path to the base resume markdown",
+    )
+    parser.add_argument(
+        "--cv-source",
+        default=str(DEFAULT_CV_SOURCE),
+        help="Path to the base CV markdown",
     )
     parser.add_argument(
         "--base-dir",
@@ -505,8 +511,10 @@ def main() -> int:
     if not resume_source.exists():
         print(f"Base resume not found: {resume_source}")
         return 1
+    cv_source = Path(args.cv_source).expanduser()
 
     resume_name = f"Augusto_Pena_{company_slug}_{position_slug}_Resume.md"
+    cv_name = f"Augusto_Pena_{company_slug}_{position_slug}_CV.md"
     cover_name = f"Augusto_Pena_{company_slug}_{position_slug}_Cover_Letter.md"
     job_name = f"Job_Description_{company_slug}_{position_slug}.md"
     notes_name = f"Application_Notes_{company_slug}_{position_slug}.md"
@@ -537,6 +545,11 @@ def main() -> int:
 
     resume_path = target_dir / resume_name
     maybe_copy_file(resume_source, resume_path)
+    if cv_source.exists():
+        cv_path = target_dir / cv_name
+        maybe_copy_file(cv_source, cv_path)
+    else:
+        print(f"Warning: base CV not found: {cv_source}. Skipping CV generation.")
 
     job_description_content = job_description or "Add job description here."
     job_path = target_dir / job_name

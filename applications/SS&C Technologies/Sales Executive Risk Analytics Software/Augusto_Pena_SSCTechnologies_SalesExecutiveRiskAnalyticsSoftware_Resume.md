@@ -3,7 +3,7 @@
 cotopena@gmail.com | (305)-744-6406 | Ft. Lauderdale, FL
 
 ## Professional Summary
-Enterprise B2B sales leader and founder-operator with 9+ years of quota-carrying performance, pipeline creation, and consultative selling across software-enabled solutions. Most recently led SaaS product and go-to-market execution at QuoteNclose and Safeguard Impact. Record includes 100% year-on-year growth at TOPO UAV, scaling annual sales from 300 to 6,000 at Mendiola Group, and closing the first 83 online sales at Roof1303. MBA and B.A. in Economics with banking analyst exposure.
+Enterprise B2B sales leader and founder-operator with 9+ years of quota-carrying performance, pipeline creation, and consultative selling across software-enabled solutions. Most recently led SaaS product and go-to-market execution at QuoteNclose and SafeGuard Impact. Record includes 100% year-on-year growth at TOPO UAV, scaling annual sales from 300 to 6,000 at Mendiola Group, and closing the first 83 online sales at Roof1303. MBA and B.A. in Economics with banking analyst exposure.
 
 ## Core Skills
 Enterprise Software Sales, New Business Development, Consultative Selling, Prospecting and Cold Calling, Discovery and Needs Analysis, Cost-Benefit and ROI Framing, Territory Management, Pipeline Forecasting, CRM/BRM (Salesforce, HubSpot, Trello), Executive Presentations, Negotiation, Relationship Management, MS Excel/Word/PowerPoint, Financial Services Foundation, Financial Risk Vocabulary (Market/Credit/Liquidity), Buy-Side/Sell-Side Context Familiarity
@@ -15,7 +15,7 @@ Enterprise Software Sales, New Business Development, Consultative Selling, Prosp
 - Led product-led customer conversations with contractor owners and sales managers, translating technical capabilities into business value.
 - Created KPI and financial-scenario workflows used for commercial decision support and growth planning.
 
-### Founder and Product Lead | Safeguard Impact | Miami, FL | 01/2025-Present
+### Founder and Product Lead | SafeGuard Impact | Miami, FL | 01/2025-Present
 - Built and operated quote-to-contract software workflows for impact windows and doors sales teams.
 - Delivered proposal, pricing, financing, and contract lifecycle features to improve sales-process consistency.
 - Combined product delivery with sales enablement and customer-facing process optimization.

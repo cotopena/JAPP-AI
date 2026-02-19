@@ -31,7 +31,7 @@ Miami, FL | 02/2026 - Present
 - Translated technical capabilities into commercial value narratives for business users and stakeholders.
 - Managed high-accountability execution across product architecture, delivery quality, and operational documentation.
 
-### Founder & Product Lead, Safeguard Impact  
+### Founder & Product Lead, SafeGuard Impact  
 Miami, FL | 01/2025 - Present
 - Built and launched software workflows for quote-to-contract lifecycle management in impact windows and doors.
 - Combined product delivery with revenue-oriented customer conversations, implementation support, and process improvement.

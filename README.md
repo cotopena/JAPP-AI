@@ -43,6 +43,7 @@ applications/
   Company Name/
     Position Title/
       Augusto_Pena_{Company}_{Position}_Resume.md
+      Augusto_Pena_{Company}_{Position}_CV.md
       Augusto_Pena_{Company}_{Position}_Cover_Letter.md
       Job_Description_{Company}_{Position}.md
       Application_Notes_{Company}_{Position}.md
@@ -54,6 +55,7 @@ The script also creates or updates:
 ## Core Files
 
 - `Augusto_Pena_Resume.md` is the base resume that gets copied for each role.
+- `Augusto_Pena_CV.md` is the base CV that gets copied for each role.
 - `experience_bank.md` is the full experience inventory to pull from when tailoring.
 - `trd_analyst.md` is a reusable writeup for the January 2022 local-first AI Analyst prototype.
 - `templates/` contains reusable templates for cover letters and notes.
@@ -67,6 +69,7 @@ The script also creates or updates:
 - `--force`: Overwrite generated files if they already exist.
 - `--non-interactive`: Disable prompts and require all needed values through flags.
 - `--base-dir`: Override the output root (default: `applications/`).
+- `--cv-source`: Override the base CV source file (default: `Augusto_Pena_CV.md`).
 - `--tracker-file`: Override tracker CSV path (default: `tracking/application_tracker.csv`).
 - `--skip-tracker-update`: Generate files without modifying tracker CSV.
 - `--status`: Set or update tracker status (for example `Drafting`, `Applied`, `Interview`).
@@ -116,7 +119,7 @@ Notes:
 
 1. Paste the job description and run `scripts/new_application.py`.
 2. Review `Application_Notes_*.md`, including the status snapshot and communication log section.
-3. Tailor the copied resume and cover letter for the role.
+3. Tailor the copied resume, CV, and cover letter for the role.
 4. When you apply, update `tracking/application_tracker.csv` (`status`, `date_applied`, `next_action`).
 5. When companies respond, append to `tracking/communication_log.csv` and update `response_state` in `tracking/application_tracker.csv`.
 

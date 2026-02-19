@@ -16,6 +16,10 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Integrated secure file upload flows for opening photos via storage upload URLs and backend authorization checks.
 - Built a roofing pricing workflow with material-specific rates and optional flat-extension calculations.
 - Implemented a catalog-driven windows/doors pricing engine using generated formula/package/add-on datasets and robust input validation.
+- Replaced fixed-size windows/doors pricebook logic with an algorithmic pricing model using fewer than 100 parameters.
+- Achieved 99.99% pricing accuracy while supporting thousands of SKUs and virtually infinite customization combinations.
+- Improved quote precision for sales, operations, and finance so teams could predict costs, budget expenses, and manage cash flow with better upstream data.
+- Reduced ordering, permitting, and delivery timelines by up to 3 weeks by producing more accurate, cross-department-ready quote and contract information.
 - Added quote total patching logic so pricing updates stay synchronized with quote records.
 - Built contract lifecycle logic (`draft -> review -> sent -> signed -> archived`) with transition validation and deterministic failure modes.
 - Implemented template versioning and active-template selection for contract rendering.
@@ -72,6 +76,7 @@ Use this file as the full inventory of your experience and achievements. Add ext
 #### Full-Stack / Product Engineer
 - Built a full-stack contractor SaaS from tenant routing through quoting, contracts, and embedded e-sign completion.
 - Delivered end-to-end user flows: quote creation, opening-level customization, pricing, contract preview, send/sign, and post-sign persistence.
+- Replaced pricebook-heavy windows/doors pricing with an algorithmic model (<100 parameters) that maintained 99.99% accuracy across thousands of SKUs and broad customization scenarios.
 - Designed admin experiences for membership management and contract operations with role-aware controls and deterministic UX states.
 - Implemented server actions and backend mutations/queries with strict tenant scoping and consistent error surfaces.
 
@@ -122,7 +127,11 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Observability
 - Structured Logging
 - Pricing Engine
+- Algorithmic Pricing
+- Pricebook Replacement
 - Workflow Automation
+- Cash Flow Planning
+- Cross-Department Data Handoffs
 - Financial Modeling
 - Three-Statement Model
 - Cash Flow Analysis
@@ -140,16 +149,20 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Increased successful first-pass contract signing completion to [X%].
 - Reduced authorization-related production issues to [X] after RBAC rollout.
 
-## SafeGuard Impact (Founder and Product Lead, 01/2025 - Present)
-- Sole creator of the Safeguard Quote platform, owning architecture, implementation, and delivery across frontend, backend, database, and tooling.
+## SafeGuard Impact (Technology Consultant, 01/2025 - Present)
+- Engaged as a consultant to design and deliver three core systems that unified operations, sales execution, and growth channels.
+- Built a unified source-of-truth database that consolidated records across departments using disconnected CRMs and tools, reducing information loss and communication failures.
 - Built the full quote-to-contract lifecycle for impact windows and doors with rep and homeowner experiences.
+- Implemented a CPQ workflow so sales reps capture structured point-of-sale data and automatically route department-specific information to operations, permitting, finance, and installation teams.
+- Identified point-of-sale contract-data bottlenecks as a root cause of downstream friction and rework across departments.
+- Delivered a pricebook-driven windows/doors pricing workflow with item configuration, package options, discounts, financing calculators, and proposal versioning.
+- Implemented AI-assisted internal workflows that reduced cross-department communication resistance, increased operational efficiency by 50%, and lowered overhead costs.
+- Designed and launched a referral partner application that created a circular, self-feeding lead engine.
+- Increased referrals by 300%, drove 20% monthly sales growth, and improved brand recognition through referral-led pipeline expansion.
 - Implemented tokenized access patterns, RLS-enforced Postgres policies, request context middleware, and environment-driven deployment controls.
-- Delivered pricing and proposal capabilities including item configuration, package options, discounts, financing calculators, and proposal versioning.
 - Built contract workflows with hosted signing, PDF generation, secure artifact storage, and audit-focused handling.
 - Integrated GoHighLevel webhook intake, Postmark email delivery, and n8n operational handoff automation.
 - Added observability and reliability tooling including structured logs, request IDs, Prometheus metrics, and test coverage across critical flows.
-- Additional details:
-  - 
 
 ## SafeGuard Impact - Partner Referral Platform (Full-Stack Developer / Context Engineer, Consultant, 2025 - Present)
 - Type: Product build + operations + process design.
@@ -162,6 +175,7 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Modeled and implemented database schema with enums, indexes, triggers, and Row-Level Security (RLS) policies for partner and referral records.
 - Implemented admin workflow for referral lifecycle management (status, deal amount, close date, notes) plus admin privilege management with self-demotion guardrails.
 - Built partner analytics with direct vs first-degree indirect referral segmentation and persistent date-range filtering with UTC normalization.
+- Built a repeatable referral motion that supported a 300% increase in referrals and contributed to sustained monthly sales growth.
 - Added deep-link routing and sanitization logic to safely support campaign/share links while blocking unsafe redirect payloads.
 - Improved auth/session resilience with a process-level Supabase lock strategy, timeout handling, token namespace cleanup, and retry behavior.
 - Added performance and reliability enhancements including data prefetch/warmup, keepalive health checks, retry/backoff behavior, and client telemetry hooks.
@@ -191,6 +205,7 @@ Use this file as the full inventory of your experience and achievements. Add ext
 
 #### AI Consulting / Business Consulting
 - Translated business referral and partner-growth goals into a working digital workflow with measurable operational controls.
+- Identified point-of-sale data bottlenecks that created downstream rework and designed process/technology fixes to reduce handoff friction.
 - Designed role boundaries and approval mechanics (partner vs admin capabilities, admin request queue, promotion/demotion governance).
 - Reduced operational risk by defining email/auth deliverability setup, redirect safety policies, rollout checklists, and post-deploy QA processes.
 - Created shared reference docs that aligned engineering, marketing, and partner operations on invite links, referral handling, and support procedures.
