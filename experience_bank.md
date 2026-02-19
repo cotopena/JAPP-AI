@@ -100,6 +100,77 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - Additional details:
   - 
 
+## SafeGuard Impact - Partner Referral Platform (Full-Stack Developer / Context Engineer, Consultant, 2025 - Present)
+- Type: Product build + operations + process design.
+- Stack: React, TypeScript, Vite, Tailwind, React Query, Supabase (Auth + Postgres + RLS), FastAPI, Python, Pydantic, Pytest, Vitest, Playwright, Sentry, Postmark/MailDev.
+- Built and shipped a full-stack referral platform for SafeGuard's partner program, covering homeowner lead capture, partner onboarding, partner dashboards, and admin operations.
+- Owned architecture and implementation across frontend, backend, and database design, including secure auth flows, role-based permissions, data modeling, QA automation, and deployment/readiness documentation.
+- Designed a monorepo architecture with a React/Vite frontend (`apps/web`) and FastAPI backend (`apps/server`) backed by Supabase/Postgres.
+- Implemented end-to-end referral flows: public invite links, homeowner referral submission, partner invite resolution, authenticated partner dashboards, and an admin control center.
+- Built secure backend APIs with role-based access checks and validation rules, including admin-only endpoints and partner-scoped data access.
+- Modeled and implemented database schema with enums, indexes, triggers, and Row-Level Security (RLS) policies for partner and referral records.
+- Implemented admin workflow for referral lifecycle management (status, deal amount, close date, notes) plus admin privilege management with self-demotion guardrails.
+- Built partner analytics with direct vs first-degree indirect referral segmentation and persistent date-range filtering with UTC normalization.
+- Added deep-link routing and sanitization logic to safely support campaign/share links while blocking unsafe redirect payloads.
+- Improved auth/session resilience with a process-level Supabase lock strategy, timeout handling, token namespace cleanup, and retry behavior.
+- Added performance and reliability enhancements including data prefetch/warmup, keepalive health checks, retry/backoff behavior, and client telemetry hooks.
+- Established automated QA coverage across unit, integration, and E2E layers (18 test files across Python + Vitest + Playwright).
+- Wrote operations-focused documentation for auth setup, onboarding, rollout verification, UI QA, marketing handoff, and deployment safety checks.
+- Created reusable, structured engineering workflows (brainstorm -> ticket -> implementation plan -> validation -> manual verification) to improve AI-assisted and human collaboration quality.
+
+### Modular Bullet Library (Pick by Job Type)
+
+#### Software Developer / Full-Stack
+- Built a production-oriented full-stack app using React/TypeScript, FastAPI, and Supabase.
+- Implemented REST APIs for public submissions, partner dashboards, and admin workflows with strict auth and input validation.
+- Designed a Postgres schema with RLS, indexed query paths, and trigger-based timestamp hygiene.
+- Developed robust session/auth flows (email/password, OAuth, verification gating, reset/recovery handling).
+- Delivered admin tooling for partner management and referral pipeline operations.
+- Implemented reusable frontend data/filter hooks and React Query caching/prefetch patterns.
+- Added automated tests for critical routes, date-window logic, referral segmentation, auth recovery, and deep-link safety.
+- Documented deployment and operational runbooks to reduce regression risk.
+
+#### Context Engineer / AI-First Developer
+- Built a structured context-to-delivery workflow system with explicit command playbooks for brainstorming, ticketing, planning, implementation, and manual verification.
+- Designed deterministic prompt/process contracts (naming rules, acceptance criteria templates, guardrails, handoff artifacts) to reduce ambiguity in AI-assisted execution.
+- Standardized engineering context packaging (code pointers, scope constraints, verification checklists) for high-signal collaboration between human and AI contributors.
+- Applied context-engineering principles in product code via typed contracts, strict validation boundaries, and recoverable error states.
+- Embedded observability and operational feedback loops (telemetry messages, retries, timeout diagnostics) to improve agent and human debugging quality.
+- Produced documentation that bridges product, engineering, and operations contexts so execution remains consistent across environments and contributors.
+
+#### AI Consulting / Business Consulting
+- Translated business referral and partner-growth goals into a working digital workflow with measurable operational controls.
+- Designed role boundaries and approval mechanics (partner vs admin capabilities, admin request queue, promotion/demotion governance).
+- Reduced operational risk by defining email/auth deliverability setup, redirect safety policies, rollout checklists, and post-deploy QA processes.
+- Created shared reference docs that aligned engineering, marketing, and partner operations on invite links, referral handling, and support procedures.
+- Built a maintainable foundation for scaling partner onboarding and referral attribution while preserving data security and auditability.
+- Combined technical delivery with process consulting to improve execution clarity, handoffs, and change management.
+
+### ATS Keywords
+- full-stack
+- React
+- TypeScript
+- FastAPI
+- Python
+- Supabase
+- Postgres
+- RLS
+- Auth
+- OAuth
+- API design
+- admin tooling
+- data modeling
+- QA automation
+- Playwright
+- Vitest
+- Pytest
+- observability
+- Sentry
+- context engineering
+- AI-assisted development
+- technical consulting
+- business process design
+
 ## Reehash.com (Co-Founder and CEO, 05/2023 - 12/2024)
 - Spearheaded software development of a virtual sales platform for the roofing industry and expanded it to impact windows and painting.
 - Integrated AI-powered tools to assist sales reps in handling rebuttals and complex questions during live video calls.
