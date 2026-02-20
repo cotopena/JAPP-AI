@@ -51,8 +51,8 @@ For `career-portfolio`:
 For `ai-portfolio`:
 
 - `README.md`
-- `tasks-ai-portfolio.md`
-- `design-ux-ui.md`
+- `.documents/tasks-ai-portfolio.md`
+- `.documents/design-ux-ui.md`
 - Core dirs/files: `src/`, `convex/`, `src/app/api/chat/route.ts`
 
 ## Tools & Defaults

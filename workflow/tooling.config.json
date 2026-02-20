@@ -19,9 +19,9 @@
       "codeRoots": ["index.html", "styles.css", "script.js", "assets"]
     },
     "ai-portfolio": {
-      "taskBoard": "tasks-ai-portfolio.md",
+      "taskBoard": ".documents/tasks-ai-portfolio.md",
       "projectPlan": "README.md",
-      "techStack": "design-ux-ui.md",
+      "techStack": ".documents/design-ux-ui.md",
       "codeRoots": ["src", "convex", "src/app/api/chat/route.ts"]
     }
   },
