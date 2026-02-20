@@ -211,7 +211,8 @@ function ChatShell({
           <div className="flex-1 space-y-4 overflow-y-auto px-5 py-5 sm:px-6">
             {messages.length === 0 ? (
               <div className="rounded-2xl border border-dashed border-line bg-paper p-5 text-sm leading-relaxed text-muted">
-                Ask about background, projects, skills, impact, or next-role fit.
+                Use a recruiter-style prompt: role fit, measurable outcomes,
+                leadership examples, or direct contact details.
               </div>
             ) : null}
 
@@ -265,7 +266,7 @@ function ChatShell({
                 id="chat-input"
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
-                placeholder={`Ask about ${portfolio.name}'s projects, skills, and impact...`}
+                placeholder="Ask a recruiter-style question about fit, measurable impact, leadership, or contact details..."
                 rows={2}
                 className="min-h-20 flex-1 resize-none rounded-2xl border border-line bg-paper px-4 py-3 text-sm outline-none transition focus:border-brand"
                 disabled={submitting}
