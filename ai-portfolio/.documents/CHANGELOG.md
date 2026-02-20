@@ -4,6 +4,17 @@ All notable changes to this AI portfolio project will be documented here.
 Entries follow Keep a Changelog conventions.
 Dates are in YYYY-MM-DD, newest entries go on top.
 
+## Portfolio Release 0.3 — 2026-02-20
+
+### Fixed
+- Scoped Tailwind source discovery to `src/` to prevent Turbopack panics caused by traversing external symlinks during CSS processing (direct request).
+- Deferred client session ID initialization until after hydration to keep initial server/client render output aligned and eliminate hydration mismatch overlays (direct request).
+
+#### Commit details
+- `b37004b` — **fix(ai-portfolio): stabilize Turbopack CSS scanning and initial hydration**
+  *Files*: `ai-portfolio/src/app/globals.css`, `ai-portfolio/src/app/page.tsx`
+  *Notes*: Fixed two runtime blockers in local development by constraining CSS source scanning and making the first client render deterministic.
+
 ## Portfolio Release 0.2 — 2026-02-20
 
 ### Tooling
