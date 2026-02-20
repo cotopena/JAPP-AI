@@ -54,10 +54,19 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## One-command local run
+
+```bash
+npm run dev:all
+```
+
+This starts both Convex and Next.js in one terminal.
+
 ## Useful commands
 
 ```bash
 npm run convex:codegen
+npm run dev:all
 npm run lint
 npm run build
 ```
@@ -69,4 +78,3 @@ npm run build
 - Chat persistence: `convex/chat.ts`
 - AI route: `src/app/api/chat/route.ts`
 - UI page: `src/app/page.tsx`
-

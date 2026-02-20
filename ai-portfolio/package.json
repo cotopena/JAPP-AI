@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "convex:dev": "convex dev",
+    "dev:all": "concurrently -k -n convex,next -c cyan,magenta \"npm:convex:dev\" \"npm:dev\"",
     "convex:codegen": "convex dev --once",
     "build": "next build",
     "start": "next start",
@@ -25,6 +26,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
