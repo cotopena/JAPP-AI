@@ -18,8 +18,8 @@ const MAIN_SLUG = "main";
 const DEFAULT_MODEL = process.env.OPENAI_MODEL ?? "gpt-4.1-mini";
 
 type ChatBody = {
-  id?: string;
-  messages?: UIMessage[];
+  id?: unknown;
+  messages?: unknown;
 };
 
 function messageText(message: UIMessage | undefined): string {
@@ -45,6 +45,31 @@ function getAssistantResponseMessageId(responseMessages: unknown[]): string {
   }) as { id?: string } | undefined;
 
   return assistantMessage?.id ?? crypto.randomUUID();
+}
+
+function normalizeSessionId(id: unknown): string {
+  if (typeof id !== "string") {
+    return crypto.randomUUID();
+  }
+
+  const trimmed = id.trim();
+  return trimmed.length > 0 ? trimmed : crypto.randomUUID();
+}
+
+function parseChatBody(payload: unknown): { sessionId: string; messages: UIMessage[] } | null {
+  if (typeof payload !== "object" || payload === null) {
+    return null;
+  }
+
+  const body = payload as ChatBody;
+  if (!Array.isArray(body.messages)) {
+    return null;
+  }
+
+  return {
+    sessionId: normalizeSessionId(body.id),
+    messages: body.messages as UIMessage[],
+  };
 }
 
 async function ensurePortfolio(): Promise<PortfolioPayload> {
@@ -102,9 +127,19 @@ export async function POST(request: Request) {
     );
   }
 
-  const body = (await request.json()) as ChatBody;
-  const messages = body.messages ?? [];
-  const sessionId = body.id ?? crypto.randomUUID();
+  let payload: unknown;
+  try {
+    payload = await request.json();
+  } catch {
+    return new Response("Invalid JSON payload.", { status: 400 });
+  }
+
+  const parsedBody = parseChatBody(payload);
+  if (!parsedBody) {
+    return new Response("A messages array is required.", { status: 400 });
+  }
+
+  const { messages, sessionId } = parsedBody;
 
   if (messages.length === 0) {
     return new Response("No messages were provided.", { status: 400 });
@@ -113,22 +148,33 @@ export async function POST(request: Request) {
   const portfolio = await ensurePortfolio();
 
   const latestUserMessage = [...messages].reverse().find((msg) => msg.role === "user");
-  if (latestUserMessage) {
-    const text = messageText(latestUserMessage);
-    if (text) {
-      await fetchMutation(api.chat.saveMessage, {
-        sessionId,
-        messageId: latestUserMessage.id,
-        role: "user",
-        text,
-      });
-    }
+  if (!latestUserMessage) {
+    return new Response("A user message is required.", { status: 400 });
+  }
+
+  const latestUserText = messageText(latestUserMessage);
+  if (!latestUserText) {
+    return new Response("Latest user message is empty.", { status: 400 });
+  }
+
+  await fetchMutation(api.chat.saveMessage, {
+    sessionId,
+    messageId: latestUserMessage.id || crypto.randomUUID(),
+    role: "user",
+    text: latestUserText,
+  });
+
+  let modelMessages;
+  try {
+    modelMessages = await convertToModelMessages(messages);
+  } catch {
+    return new Response("Messages payload could not be parsed.", { status: 400 });
   }
 
   const result = streamText({
     model: openai(DEFAULT_MODEL),
     system: createSystemPrompt(portfolio),
-    messages: await convertToModelMessages(messages),
+    messages: modelMessages,
     stopWhen: stepCountIs(5),
     onFinish: async ({ text, response }) => {
       const trimmed = text.trim();

@@ -82,18 +82,18 @@ Improve chat reliability and mobile readability so recruiters can complete quest
   - **Then** text remains readable, controls are not clipped, and taps are reliable
 
 ## Deliverables
-- [ ] Code updated in `src/app/page.tsx` and `src/app/api/chat/route.ts`
-- [ ] JavaScript interaction/data logic updated (if applicable)
-- [ ] Docs updated (`.documents/CHANGELOG.md`)
-- [ ] Telemetry/metrics/alerts defined
+- [x] Code updated in `src/app/page.tsx` and `src/app/api/chat/route.ts`
+- [x] JavaScript interaction/data logic updated (if applicable)
+- [x] Docs updated (`.documents/CHANGELOG.md`)
+- [x] Telemetry/metrics/alerts defined
 
 ## Verification Commands
-- [ ] bash workflow/scripts/lint-prompts.sh (if docs/prompts changed)
-- [ ] npm run lint
-- [ ] npm run build
-- [ ] npm run dev:all
-- [ ] npx convex run chat:getMessagesBySession '{"sessionId":"<manual-test-session-id>"}'
-- [ ] Manual: failure simulation + retry path + mobile pass (390px/360px)
+- [x] bash workflow/scripts/lint-prompts.sh (if docs/prompts changed) — PASS (2026-02-20)
+- [x] npm run lint — PASS (2026-02-20)
+- [x] npm run build — PASS (2026-02-20)
+- [x] npm run dev:all — PASS (2026-02-20 after worktree env sync + `npx convex dev --configure`)
+- [x] npx convex run chat:getMessagesBySession '{"sessionId":"<manual-test-session-id>"}' — PASS (`sessionId: 2a40cb4e-f395-453a-82a1-9e30b8670cfd`, user+assistant persisted)
+- [x] Manual: failure simulation + retry path + mobile pass (390px/360px) — PASS (2026-02-20; screenshots at `/tmp/manual-verify-390.png`, `/tmp/manual-verify-360.png`, `/tmp/manual-verify-360-retry.png`)
 
 ## Non-Functional Requirements
 - Performance/SLO: no duplicate message inserts for a single retry action
@@ -118,6 +118,17 @@ Improve chat reliability and mobile readability so recruiters can complete quest
 - No schema or API contract changes in `convex/schema.ts`
 - Reliability and mobile polish are completed together in this ticket
 
+## Implementation Notes (2026-02-20)
+- Added shared prompt submission flow in `src/app/page.tsx` so textarea submit, quick prompts, and retry all follow the same trimming + submit-lock behavior.
+- Added deterministic retry UX state in `src/app/page.tsx`: the latest failed prompt is stored on error and retried via inline footer action, then cleared only after a successful assistant completion.
+- Hardened request handling in `src/app/api/chat/route.ts` to reject invalid JSON, missing messages arrays, missing user turns, and empty user text before streaming.
+- Preserved Convex schema/index contracts and enforced deterministic rehydration order by sorting conversation messages by `createdAt` in `convex/chat.ts`.
+
+## Telemetry Definitions (2026-02-20)
+- `retry_attempt_count`: increment when user clicks the inline `Retry` action after a chat error.
+- `chat_request_error_count`: increment when chat route returns a non-2xx response or `useChat` enters `error` status.
+- `assistant_persistence_failure_count`: increment when `src/app/api/chat/route.ts` `onFinish` catches and logs `"Failed to persist assistant message"`.
+
 ## Open Questions (keep ≤ 4)
 - None.
 
@@ -127,7 +138,7 @@ Improve chat reliability and mobile readability so recruiters can complete quest
 - Manual mobile validation can be run via browser responsive mode
 
 ## Definition of Done
-- [ ] All Acceptance Criteria pass
+- [x] All Acceptance Criteria pass
 - [ ] Unit/Integration tests added/updated
 - [ ] Lint/typecheck/CI green
 - [ ] Deployed behind flag if risky

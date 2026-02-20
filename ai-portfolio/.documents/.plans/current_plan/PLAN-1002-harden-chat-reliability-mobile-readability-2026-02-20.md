@@ -52,16 +52,16 @@ Guarantee predictable send behavior and explicit inline retry recovery in the ch
 
 ### Acceptance Criteria
 #### Automated
-- [ ] `npm run lint`
-- [ ] `npm run build`
-- [ ] `npm run dev:all` starts both Convex + Next.js cleanly
-- [ ] `bash workflow/scripts/lint-prompts.sh` (only if prompt/docs files are changed)
+- [x] `npm run lint` — PASS (2026-02-20, local)
+- [x] `npm run build` — PASS (2026-02-20, local)
+- [x] `npm run dev:all` starts both Convex + Next.js cleanly — PASS (2026-02-20 after worktree env sync and `npx convex dev --configure`; both services reached ready state)
+- [x] `bash workflow/scripts/lint-prompts.sh` (only if prompt/docs files are changed) — PASS (2026-02-20, docs lint clean)
 
 #### Manual
-- [ ] Blank/whitespace send attempts do not create a request or append a message.
-- [ ] While a response is pending, send controls are visibly disabled and duplicate sends are blocked.
-- [ ] Failed request surfaces inline footer error with explicit retry action.
-- [ ] Retry action re-submits the failed prompt once and clears error state on success.
+- [x] Blank/whitespace send attempts do not create a request or append a message. - Passed: whitespace-only input kept `Send` disabled and click attempts timed out on disabled control with no extra chat request.
+- [x] While a response is pending, send controls are visibly disabled and duplicate sends are blocked. - Passed: during `THINKING`, quick prompts/textarea/send were disabled in snapshot and second send click timed out while non-interactive.
+- [x] Failed request surfaces inline footer error with explicit retry action. - Passed: forced offline request returned inline `Failed to fetch` footer error with visible `Retry` control.
+- [x] Retry action re-submits the failed prompt once and clears error state on success. - Passed: restoring network and tapping `Retry` submitted one recovery prompt, returned assistant response, and removed footer error (`READY` state).
 
 ### Assets/Docs
 - `.documents/.tickets/current/TICKET-1002-harden-chat-reliability-mobile-readability-2026-02-20.md`
@@ -80,14 +80,14 @@ Ensure server persistence behavior remains deterministic for user and assistant 
 
 ### Acceptance Criteria
 #### Automated
-- [ ] `npm run lint`
-- [ ] `npm run build`
-- [ ] `npx convex run chat:getMessagesBySession '{"sessionId":"<manual-test-session-id>"}'` returns non-empty `user` and `assistant` messages after one successful turn
+- [x] `npm run lint` — PASS (2026-02-20, local)
+- [x] `npm run build` — PASS (2026-02-20, local)
+- [x] `npx convex run chat:getMessagesBySession '{"sessionId":"<manual-test-session-id>"}'` returns non-empty `user` and `assistant` messages after one successful turn — PASS (`sessionId: 2a40cb4e-f395-453a-82a1-9e30b8670cfd` returned interleaved non-empty user/assistant records)
 
 #### Manual
-- [ ] Same-browser refresh reuses `ai-portfolio-session-id` and rehydrates prior turns in order.
-- [ ] One successful prompt/response cycle persists both roles for the active session.
-- [ ] Retry path does not create duplicate inserts for a single user recovery action.
+- [x] Same-browser refresh reuses `ai-portfolio-session-id` and rehydrates prior turns in order. - Passed: `localStorage` session remained `2a40cb4e-f395-453a-82a1-9e30b8670cfd` before/after reload and prior turns reloaded in chronological order.
+- [x] One successful prompt/response cycle persists both roles for the active session. - Passed: successful prompts produced both `user` and `assistant` entries confirmed by `npx convex run chat:getMessagesBySession`.
+- [x] Retry path does not create duplicate inserts for a single user recovery action. - Passed: after offline->retry flow, query showed one persisted `Mobile retry tap test` user row and one assistant row (no duplicate insert for failed attempt).
 
 ### Assets/Docs
 - `src/app/api/chat/route.ts`
@@ -105,13 +105,13 @@ Improve readability and interaction clarity for long chat responses and controls
 
 ### Acceptance Criteria
 #### Automated
-- [ ] `npm run lint`
-- [ ] `npm run build`
+- [x] `npm run lint` — PASS (2026-02-20, local)
+- [x] `npm run build` — PASS (2026-02-20, local)
 
 #### Manual
-- [ ] At 390px and 360px viewports, long assistant replies remain readable without clipped text.
-- [ ] Quick prompts, send button, and retry control remain fully tappable and visually distinct.
-- [ ] Conversation panel maintains clear hierarchy (status, prompts, messages, input) on mobile.
+- [x] At 390px and 360px viewports, long assistant replies remain readable without clipped text. - Passed: validated at 390x844 and 360x800 with long assistant blocks; screenshots `/tmp/manual-verify-390.png` and `/tmp/manual-verify-360.png`.
+- [x] Quick prompts, send button, and retry control remain fully tappable and visually distinct. - Passed: quick prompt taps and send action worked at mobile sizes; offline error showed tappable retry control and successful recovery at 360px.
+- [x] Conversation panel maintains clear hierarchy (status, prompts, messages, input) on mobile. - Passed: hierarchy remained intact (`READY/THINKING` badge, quick prompts, interleaved messages, footer input) in mobile snapshots.
 
 ### Assets/Docs
 - `src/app/page.tsx`
@@ -142,14 +142,14 @@ Close the ticket with reproducible verification evidence, documented reliability
 
 ### Acceptance Criteria
 #### Automated
-- [ ] `npm run lint` passes
-- [ ] `npm run build` passes
-- [ ] `npx convex run chat:getMessagesBySession '{"sessionId":"<manual-test-session-id>"}'` evidence captured
+- [x] `npm run lint` passes — PASS (2026-02-20, local)
+- [x] `npm run build` passes — PASS (2026-02-20, local)
+- [x] `npx convex run chat:getMessagesBySession '{"sessionId":"<manual-test-session-id>"}'` evidence captured — PASS (`sessionId: 2a40cb4e-f395-453a-82a1-9e30b8670cfd`, non-empty user/assistant output captured)
 
 #### Manual
-- [ ] All ticket acceptance scenarios pass end-to-end.
-- [ ] Manual QA notes include mobile viewport screenshots/checkpoints for 390px and 360px.
-- [ ] Release notes/changelog entry captures reliability + readability scope and telemetry definitions.
+- [x] All ticket acceptance scenarios pass end-to-end. - Passed: executed empty-guard, pending-disable, forced error+retry recovery, persistence/rehydration, and mobile checks in live `dev:all` session.
+- [x] Manual QA notes include mobile viewport screenshots/checkpoints for 390px and 360px. - Passed: captured `/tmp/manual-verify-390.png`, `/tmp/manual-verify-360.png`, and `/tmp/manual-verify-360-retry.png`.
+- [x] Release notes/changelog entry captures reliability + readability scope and telemetry definitions. - Passed: changelog includes reliability/readability release scope; telemetry definitions are documented in the linked ticket notes.
 
 ### Assets/Docs
 - `.documents/CHANGELOG.md`
@@ -181,6 +181,11 @@ Close the ticket with reproducible verification evidence, documented reliability
 - Security/privacy: no new persisted PII; continue using existing `sessionId`, `role`, and `text` fields only.
 - Migration: no schema/index changes; Convex contracts in `convex/schema.ts` remain unchanged.
 - Rollback: revert implementation commit and redeploy to restore prior chat shell behavior.
+
+## Implementation Notes (2026-02-20)
+- Phase 1 and Phase 3 were implemented together in `src/app/page.tsx` by introducing a shared submit helper, explicit retry UX in the footer error region, and mobile-first spacing/typography refinements.
+- Phase 2 preserved existing API/Convex contracts while adding stronger request guards in `src/app/api/chat/route.ts` and deterministic chronological ordering for session rehydration in `convex/chat.ts`.
+- Manual verification rerun completed after syncing this worktree `.env.local` from the original project and reconfiguring Convex (`npx convex dev --configure`), which unblocked `dev:all` and session query checks.
 
 ## References
 - `.documents/.tickets/current/TICKET-1002-harden-chat-reliability-mobile-readability-2026-02-20.md`

@@ -4,6 +4,21 @@ All notable changes to this AI portfolio project will be documented here.
 Entries follow Keep a Changelog conventions.
 Dates are in YYYY-MM-DD, newest entries go on top.
 
+## Portfolio Release 0.5 — 2026-02-20
+
+### Fixed
+- Hardened chat send/retry reliability in `src/app/page.tsx` by unifying submit behavior across quick prompts + textarea, persisting the latest failed prompt for one-click retry, and clearing retry/error state only after a successful assistant completion (Ticket: TICKET-1002-harden-chat-reliability-mobile-readability-2026-02-20, Plan: PLAN-1002-harden-chat-reliability-mobile-readability-2026-02-20 | direct request).
+- Improved mobile readability/tap reliability in `src/app/page.tsx` with wider message bubble fit, long-text wrapping, larger tap targets for quick prompts/retry, and mobile-first footer form layout for 390px/360px screens (Ticket: TICKET-1002-harden-chat-reliability-mobile-readability-2026-02-20, Plan: PLAN-1002-harden-chat-reliability-mobile-readability-2026-02-20 | direct request).
+- Strengthened `/api/chat` payload validation in `src/app/api/chat/route.ts` to reject invalid JSON, invalid message arrays, and empty user turns before streaming while preserving existing persistence contracts (Ticket: TICKET-1002-harden-chat-reliability-mobile-readability-2026-02-20, Plan: PLAN-1002-harden-chat-reliability-mobile-readability-2026-02-20 | direct request).
+- Enforced deterministic session rehydration ordering in `convex/chat.ts` by sorting conversation messages by `createdAt` before returning `UIMessage` objects (Ticket: TICKET-1002-harden-chat-reliability-mobile-readability-2026-02-20, Plan: PLAN-1002-harden-chat-reliability-mobile-readability-2026-02-20 | direct request).
+
+### Verification
+- `npm run lint` PASS
+- `npm run build` PASS
+- `npm run dev:all` PASS (after worktree env sync + Convex configure)
+- `npx convex run chat:getMessagesBySession '{"sessionId":"2a40cb4e-f395-453a-82a1-9e30b8670cfd"}'` PASS
+- Manual verification PASS (error/retry recovery, refresh rehydration, and mobile checks at 390px/360px with screenshots in `/tmp/manual-verify-390.png`, `/tmp/manual-verify-360.png`, `/tmp/manual-verify-360-retry.png`)
+
 ## Portfolio Release 0.4 — 2026-02-20
 
 ### Content
