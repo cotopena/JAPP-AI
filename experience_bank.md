@@ -237,14 +237,16 @@ Use this file as the full inventory of your experience and achievements. Add ext
 - technical consulting
 - business process design
 
-## Reehash.com (Co-Founder and CEO, 05/2023 - 12/2024)
-- Spearheaded software development of a virtual sales platform for the roofing industry and expanded it to impact windows and painting.
-- Integrated AI-powered tools to assist sales reps in handling rebuttals and complex questions during live video calls.
-- Implemented an automated second-attempt strategy via online video calls to reclaim lost leads.
-- Increased total sales for contractor clients by 25% through rehash efforts and reduced overhead costs by 50%.
-- Delivered branded quotes and financing options aligned with each contractor's branding and homeowner needs.
-- Additional details:
-  - 
+## Reehash (Consulting / Full Stack Developer / AI, 05/2020 - Present; initially operated under another name)
+- Spearheaded the development and iteration of a virtual sales platform for residential contractors, building backend infrastructure in MySQL and CRM API integrations for real-time automations and high-volume data processing.
+- Continuously analyzed insights from 3,000+ daily call records across 10+ contractor accounts to identify operational bottlenecks and drive data-informed workflow improvements.
+- Built customized, data-driven automations integrated with contractor CRMs such as Jobber, ServiceTitan, and Housecall Pro to streamline communication, automate quoting, and improve dispatch workflows.
+- Designed and implemented financial and analytics dashboards tracking call performance, lead-to-close conversion trends, cashflow projections, and marketing ROI to guide scaling and profitability decisions.
+- Drove sales strategy and process improvements by combining CRM insights (Trello, Salesforce) with system-generated data to improve lead conversion and close rates while optimizing costs.
+- Integrated AI-assisted sales tools for live objection handling and complex query support, creating a feedback loop for team coaching and platform refinement.
+- Implemented second-attempt online consultation workflows that helped contractors recover lost opportunities and improve close performance.
+- Increased contractor-client sales by 25% while reducing overhead costs by 50% through process redesign and digital workflow adoption.
+- Delivered branded quotes and financing options aligned to each contractor's sales process and homeowner needs.
 
 ## Reehash.com - Interactive 3D Impact Window & Door Presentation Platform (Software Developer / Product Engineer, Project Build During Reehash Tenure)
 - Stack: React, TypeScript, Vite, Three.js, React Three Fiber, Drei, Zustand, Blender, GLB/DRACO assets.

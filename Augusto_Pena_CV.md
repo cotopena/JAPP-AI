@@ -24,7 +24,7 @@ Technology consultant and product operator with 10+ years of experience across s
 - Delivered a consulting engagement at SafeGuard Impact focused on three core systems: a unified source-of-truth database, a CPQ workflow, and a partner referral application.
 - Increased referrals by 300% and supported 20% monthly sales growth during the referral-program rollout through a circular, self-feeding lead channel.
 - Implemented AI-assisted internal workflows that increased operational efficiency by 50% across cross-department handoff workflows and reduced communication resistance.
-- Drove measurable commercial outcomes in prior roles, including 25% client sales growth and 50% overhead reduction (Reehash), and a 40% close rate versus an approximately 20% benchmark (Roof1303 team).
+- Drove measurable commercial outcomes across roles, including 25% client sales growth and 50% overhead reduction through Reehash workflows, and a 40% close rate versus an approximately 20% benchmark (Roof1303 team).
 
 ## Professional Experience
 
@@ -44,11 +44,14 @@ Miami, FL | 01/2025 - Present
 - Increased referrals by 300% and supported 20% monthly sales growth during referral-program rollout through referral-led pipeline expansion.
 - Implemented AI-assisted internal workflows that increased operational efficiency by 50% and reduced overhead across internal coordination workflows.
 
-### Co-Founder and CEO, Reehash.com (formerly RoofConnectUSA)
-Miami, FL | 05/2023 - 12/2024
-- Led product strategy and software delivery for a virtual sales platform in roofing, later expanding to impact windows and painting.
-- Integrated AI-assisted sales support workflows for rebuttal handling and live consultation quality.
-- Increased contractor-client sales by 25% and reduced overhead costs by 50% through digital workflow redesign.
+### Consulting / Full Stack Developer / AI, Reehash
+Miami, FL | 05/2020 - Present
+- Spearheaded the development and iteration of Reehash's virtual sales platform for residential contractors, building backend infrastructure in MySQL and CRM API integrations for real-time automation and high-volume processing.
+- Continuously analyzed insights from 3,000+ daily call records across 10+ contractor accounts to identify bottlenecks and drive data-informed workflow improvements.
+- Built customized automations integrated with Jobber, ServiceTitan, and Housecall Pro to streamline communication, automate quoting, and improve job dispatch workflows.
+- Designed financial and analytics dashboards for call performance, lead-to-close trends, cashflow projections, and marketing ROI to guide scaling decisions.
+- Drove sales strategy and process improvements by combining CRM insights (Trello, Salesforce) with system-generated data to improve conversion and close rates while optimizing costs.
+- Integrated AI-assisted sales support workflows for live objection handling and complex query navigation, creating a feedback loop for coaching and platform refinement.
 
 ### Sales Executive and Sales Manager, Roof1303.com
 Miami, FL | 10/2021 - 05/2023
