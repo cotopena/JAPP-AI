@@ -33,16 +33,15 @@ function LoadingScreen({ label }: { label: string }) {
 }
 
 export default function Home() {
-  const [sessionId] = useState(() => {
-    if (typeof window === "undefined") {
-      return "";
-    }
+  const [sessionId, setSessionId] = useState<string | null>(null);
 
+  useEffect(() => {
     const stored =
       window.localStorage.getItem(STORAGE_KEY) ?? window.crypto.randomUUID();
     window.localStorage.setItem(STORAGE_KEY, stored);
-    return stored;
-  });
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- initialize client-only session after hydration to avoid SSR mismatch.
+    setSessionId(stored);
+  }, []);
 
   if (!sessionId) {
     return <LoadingScreen label="Preparing your AI portfolio..." />;
