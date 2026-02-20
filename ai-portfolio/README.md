@@ -78,3 +78,22 @@ npm run build
 - Chat persistence: `convex/chat.ts`
 - AI route: `src/app/api/chat/route.ts`
 - UI page: `src/app/page.tsx`
+
+## Experience Update Source of Truth
+
+When updating portfolio experience content, use this precedence:
+
+1. `/Users/coto/Documents/Job Application AI/Augusto_Pena_CV.md`
+2. `/Users/coto/Documents/Job Application AI/Augusto_Pena_Resume.md`
+3. `/Users/coto/Documents/Job Application AI/experience_bank.md`
+4. `/Users/coto/Documents/Job Application AI/applications/**` (supporting context only)
+
+Required flow for content updates:
+
+1. Create/update `.documents/research/TICKET-<id>-content-source-map-YYYY-MM-DD.md`.
+2. Map each portfolio statement to a source file + line.
+3. Update `convex/portfolio.ts`.
+4. Verify with:
+   - `npx convex run portfolio:previewDefaults '{"slug":"main"}'`
+   - `npm run lint`
+   - `npm run build`
