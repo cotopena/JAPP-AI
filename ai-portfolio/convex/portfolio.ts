@@ -36,110 +36,116 @@ function buildDefaultPortfolio(slug = MAIN_PORTFOLIO_SLUG): PortfolioPayload {
   return {
     slug,
     name: "Augusto Pena",
-    role: "Senior Sales & Revenue Operations Leader",
-    location: "Miami, Florida",
+    role: "Technology Consultant and Product Operator",
+    location: "Ft. Lauderdale, FL (Greater Miami Area)",
     intro:
-      "I design scalable sales systems, lead high-performing teams, and turn complex go-to-market goals into repeatable revenue.",
+      "Technology consultant and product operator with 10+ years of experience across software delivery, operations, and revenue-focused execution.",
     longBio:
-      "I combine enterprise sales strategy with operational discipline. My focus is pipeline velocity, conversion quality, and measurable growth across B2B and consumer-facing organizations.",
+      "I build practical systems that connect business goals to technical outcomes in fragmented environments, with a track record in algorithmic pricing, consulting-led platform implementation, referral-led growth, and operational efficiency gains.",
     valueProp:
-      "If you ask this assistant about my work, it will answer with concrete outcomes, leadership examples, and execution details.",
-    availability:
-      "Open to senior sales, strategic accounts, and revenue operations leadership roles.",
-    email: "augusto.pena@email.com",
-    socials: [
-      { label: "LinkedIn", url: "https://www.linkedin.com/in/augustopena" },
-      { label: "GitHub", url: "https://github.com/" },
-    ],
+      "Ask this assistant about my work to review concrete outcomes in pricing accuracy, revenue growth, and cross-functional execution.",
+    availability: "US work authorized (no sponsorship required).",
+    email: "cotopena@gmail.com",
+    socials: [{ label: "Phone", url: "tel:+13057446406" }],
     quickPrompts: [
-      "Tell me about Augusto in 60 seconds.",
-      "Which achievements best prove revenue impact?",
-      "Show me his strongest projects and initiatives.",
-      "What are his top skills for a senior sales role?",
-      "How can I contact him?",
+      "What is Augusto's fit for a technology consultant or product-operator role?",
+      "Which outcomes best prove revenue and operational impact?",
+      "How did he lead cross-functional execution across QuoteNclose and SafeGuard Impact?",
+      "Which projects are most relevant for SaaS, CPQ, and RevOps environments?",
+      "How can I contact Augusto directly?",
     ],
     highlightBullets: [
-      "Built sales processes that improved forecast confidence and close predictability.",
-      "Led cross-functional collaboration between sales, marketing, and operations teams.",
-      "Created practical systems that reduced friction from lead intake to deal execution.",
-      "Known for balancing strategic planning with hands-on execution.",
+      "Replaced fixed-size windows and doors pricebooks with an algorithmic pricing model under 100 parameters and achieved 99.99% pricing accuracy in production quote workflows.",
+      "Improved quote and contract data quality for sales, operations, and finance, reducing ordering, permitting, and delivery timelines by up to 3 weeks.",
+      "Delivered three core systems at SafeGuard Impact (source-of-truth database, CPQ workflow, referral app) that increased referrals by 300% and supported 20% monthly sales growth.",
+      "Implemented AI-assisted internal workflows that increased operational efficiency by 50% across cross-department handoffs.",
     ],
     skillGroups: [
       {
-        category: "Revenue Leadership",
+        category: "Consulting and Leadership",
         items: [
-          "Strategic Sales Planning",
-          "Enterprise Account Growth",
-          "Pipeline Management",
-          "Forecasting",
+          "Business-to-Technical Requirements Translation",
+          "Stakeholder Discovery and Executive Communication",
+          "Cross-Functional Facilitation",
+          "Agile and Waterfall Delivery Planning",
         ],
       },
       {
-        category: "Operations",
+        category: "Revenue and Operations Systems",
         items: [
-          "CRM Architecture",
-          "Sales Process Design",
-          "Performance Dashboards",
-          "Cross-functional Enablement",
+          "Source-of-Truth Data System Design",
+          "CPQ Architecture and Sales-to-Operations Handoffs",
+          "CRM Interoperability (Salesforce, HubSpot, Trello)",
+          "Process Optimization and Change Management",
         ],
       },
       {
-        category: "Execution",
+        category: "Product and Technical Execution",
         items: [
-          "Negotiation",
-          "Stakeholder Communication",
-          "Coaching",
-          "Change Management",
+          "Next.js, React, TypeScript, Node.js, Python, FastAPI",
+          "SQL, Postgres, Supabase, Convex",
+          "RBAC, Tokenized Access, and Webhook Integrations",
+          "Analytics and Performance Instrumentation",
         ],
       },
     ],
     projects: [
       {
-        slug: "pipeline-modernization",
-        title: "Pipeline Modernization Program",
+        slug: "quotenclose-algorithmic-pricing-engine",
+        title: "QuoteNclose Algorithmic Pricing Engine",
+        category: "Full-Stack Product Engineering",
+        summary:
+          "Built and deployed a multi-tenant quoting and contract platform, replacing fixed-size pricebooks with an algorithmic pricing model for high-variation windows and doors.",
+        impact:
+          "Reached 99.99% pricing accuracy with fewer than 100 parameters, improved cross-team planning data, and reduced downstream ordering, permitting, and delivery timelines by up to 3 weeks.",
+        stack: ["Next.js", "TypeScript", "Convex", "Algorithmic Pricing"],
+        year: 2026,
+        featured: true,
+      },
+      {
+        slug: "safeguard-unified-revops-systems",
+        title: "SafeGuard Unified RevOps Systems",
+        category: "Technology Consulting",
+        summary:
+          "Delivered three consulting systems: a unified source-of-truth database, a CPQ workflow, and a referral partner application.",
+        impact:
+          "Increased referrals by 300%, supported 20% monthly sales growth during rollout, and improved operational efficiency by 50% through AI-assisted workflows.",
+        stack: ["Source-of-Truth Data", "CPQ", "Referral Growth", "AI Workflows"],
+        year: 2025,
+        featured: true,
+      },
+      {
+        slug: "reehash-virtual-sales-automation",
+        title: "Reehash Virtual Sales Automation Platform",
         category: "Revenue Operations",
         summary:
-          "Rebuilt qualification stages and reporting standards to improve funnel clarity.",
+          "Spearheaded a virtual sales platform for residential contractors with CRM-integrated automations and analytics dashboards for call performance, conversion, cashflow, and ROI.",
         impact:
-          "Improved deal visibility and reduced late-stage surprises for leadership reviews.",
-        stack: ["CRM", "RevOps", "Analytics"],
-        year: 2024,
+          "Used insights from 3,000+ daily call records across 10+ contractor accounts to improve workflows, increasing contractor-client sales by 25% while reducing overhead by 50%.",
+        stack: [
+          "CRM Integrations",
+          "Workflow Automation",
+          "Analytics Dashboards",
+          "AI Sales Support",
+        ],
+        year: 2020,
         featured: true,
       },
       {
-        slug: "enterprise-expansion-playbook",
-        title: "Enterprise Expansion Playbook",
-        category: "Sales Strategy",
+        slug: "roof1303-sales-scale-system",
+        title: "Roof1303 Digital Sales Scale-Up",
+        category: "Sales Leadership",
         summary:
-          "Designed account growth motions for high-value clients and strategic renewals.",
+          "Closed the first 83 online roof sales, then organized and migrated pipeline operations from Trello to Salesforce while building a four-rep sales team.",
         impact:
-          "Increased expansion opportunities through better account mapping and executive alignment.",
-        stack: ["Account Planning", "Negotiation", "Executive Selling"],
+          "Team achieved a 40% close rate versus an approximately 20% benchmark, supported by structured forecasting and process optimization.",
+        stack: [
+          "Salesforce",
+          "Pipeline Management",
+          "Team Coaching",
+          "Sales Forecasting",
+        ],
         year: 2023,
-        featured: true,
-      },
-      {
-        slug: "inside-sales-coaching-system",
-        title: "Inside Sales Coaching System",
-        category: "Enablement",
-        summary:
-          "Implemented repeatable coaching cycles using scorecards and call-review frameworks.",
-        impact:
-          "Improved rep consistency and created a stronger onboarding-to-performance path.",
-        stack: ["Enablement", "Coaching", "KPIs"],
-        year: 2022,
-        featured: false,
-      },
-      {
-        slug: "market-entry-program",
-        title: "New Market Entry Program",
-        category: "Go-To-Market",
-        summary:
-          "Helped define territory priorities, messaging, and outbound targeting for expansion.",
-        impact:
-          "Accelerated early pipeline generation in new segments with more focused outreach.",
-        stack: ["GTM", "Segmentation", "Outbound"],
-        year: 2021,
         featured: false,
       },
     ],

@@ -34,6 +34,19 @@ function messageText(message: UIMessage | undefined): string {
     .join("\n\n");
 }
 
+function getAssistantResponseMessageId(responseMessages: unknown[]): string {
+  const assistantMessage = responseMessages.find((message) => {
+    if (typeof message !== "object" || message === null) {
+      return false;
+    }
+
+    const candidate = message as { id?: unknown; role?: unknown };
+    return candidate.role === "assistant" && typeof candidate.id === "string";
+  }) as { id?: string } | undefined;
+
+  return assistantMessage?.id ?? crypto.randomUUID();
+}
+
 async function ensurePortfolio(): Promise<PortfolioPayload> {
   const existing = await fetchQuery(api.portfolio.getPublicPortfolio, {
     slug: MAIN_SLUG,
@@ -60,6 +73,7 @@ You are the AI portfolio assistant for ${portfolio.name}.
 Goal:
 - Answer clearly and confidently as a professional representative of ${portfolio.name}.
 - Focus on real outcomes, strengths, and relevant details for hiring managers.
+- Keep every factual statement grounded in the portfolio data available in this session.
 
 Style:
 - Keep responses concise by default.
@@ -70,6 +84,7 @@ Behavior:
 - Use tools to retrieve portfolio details before answering factual questions.
 - If a question asks for contact details, provide the direct email and social links.
 - When asked broad questions, synthesize into an easy-to-scan summary.
+- If details are missing from portfolio data, say so directly instead of inferring.
 
 Identity context:
 - Role: ${portfolio.role}
@@ -115,6 +130,23 @@ export async function POST(request: Request) {
     system: createSystemPrompt(portfolio),
     messages: await convertToModelMessages(messages),
     stopWhen: stepCountIs(5),
+    onFinish: async ({ text, response }) => {
+      const trimmed = text.trim();
+      if (!trimmed) {
+        return;
+      }
+
+      try {
+        await fetchMutation(api.chat.saveMessage, {
+          sessionId,
+          messageId: getAssistantResponseMessageId(response.messages),
+          role: "assistant",
+          text: trimmed,
+        });
+      } catch (error) {
+        console.error("Failed to persist assistant message", error);
+      }
+    },
     tools: {
       getProfile: tool({
         description: "Get profile, background, and positioning details.",
@@ -197,18 +229,5 @@ export async function POST(request: Request) {
 
   return result.toUIMessageStreamResponse({
     originalMessages: messages,
-    onFinish: async ({ responseMessage }) => {
-      const text = messageText(responseMessage);
-      if (!text) {
-        return;
-      }
-
-      await fetchMutation(api.chat.saveMessage, {
-        sessionId,
-        messageId: responseMessage.id,
-        role: "assistant",
-        text,
-      });
-    },
   });
 }

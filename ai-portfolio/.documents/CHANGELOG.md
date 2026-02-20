@@ -6,6 +6,12 @@ Dates are in YYYY-MM-DD, newest entries go on top.
 
 ## Portfolio Release 0.4 — 2026-02-20
 
+### Content
+- Replaced seeded placeholder profile, highlights, skill groups, quick prompts, and project cards in `convex/portfolio.ts` with mapped claims from CV/resume/experience source-of-truth files, including three deterministic featured projects (Ticket: TICKET-1001-publish-real-profile-project-content-2026-02-20, Plan: PLAN-1001-publish-real-profile-project-content-2026-02-20 | direct request).
+- Added source-traceability artifact `.documents/research/TICKET-1001-content-source-map-2026-02-20.md` with field-level source line references and normalized publish wording for every seeded claim (Ticket: TICKET-1001-publish-real-profile-project-content-2026-02-20, Plan: PLAN-1001-publish-real-profile-project-content-2026-02-20 | direct request).
+- Updated recruiter-facing helper and input copy in `src/app/page.tsx` and strengthened grounding instructions in `src/app/api/chat/route.ts` so chat responses explicitly avoid inference beyond seeded data (Ticket: TICKET-1001-publish-real-profile-project-content-2026-02-20, Plan: PLAN-1001-publish-real-profile-project-content-2026-02-20 | direct request).
+- Fixed assistant-turn message persistence by saving completed assistant text from `streamText` `onFinish`, restoring chat rehydration for both user and assistant roles after reload (Ticket: TICKET-1001-publish-real-profile-project-content-2026-02-20, Plan: PLAN-1001-publish-real-profile-project-content-2026-02-20 | direct request).
+
 ### Docs
 - Documented repository-level source-of-truth and publish-gate rules so portfolio content updates are grounded in CV/resume/experience artifacts (Ticket: TICKET-1001-publish-real-profile-project-content-2026-02-20, Plan: PLAN-1001-publish-real-profile-project-content-2026-02-20 | direct request).
 
