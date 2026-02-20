@@ -4,11 +4,11 @@ title: Publish Real Profile and Project Content
 type: Chore
 priority: P1
 risk_level: medium
-status: current
+status: done
 owner: unassigned
 created: 2026-02-20
 plan_blockers: []
-plan_path: .documents/.plans/current_plan/PLAN-1001-publish-real-profile-project-content-2026-02-20.md
+plan_path: .documents/.plans/completed_plan/PLAN-1001-publish-real-profile-project-content-2026-02-20.md
 labels: [area/content, component/portfolio-seed, breaking-change:no]
 ---
 
