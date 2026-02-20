@@ -76,7 +76,9 @@ export const getMessagesBySession = query({
       .withIndex("by_conversation", (q) => q.eq("conversationId", conversation._id))
       .collect();
 
-    return messages.map((message) => ({
+    const orderedMessages = [...messages].sort((a, b) => a.createdAt - b.createdAt);
+
+    return orderedMessages.map((message) => ({
       id: message.messageId,
       role: message.role,
       parts: [{ type: "text" as const, text: message.text }],

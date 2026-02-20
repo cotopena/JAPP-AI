@@ -108,14 +108,50 @@ function ChatShell({
   );
 
   const submitting = isBusy(status);
+  const [failedPrompt, setFailedPrompt] = useState<string | null>(null);
+  const [footerError, setFooterError] = useState<string | null>(null);
+  const latestSubmittedPromptRef = useRef<string | null>(null);
+  const previousStatusRef = useRef(status);
+  const statusLabel = submitting ? "Thinking" : footerError ? "Retry available" : "Ready";
+
+  useEffect(() => {
+    const previousStatus = previousStatusRef.current;
+    const completedSuccessfully =
+      status === "ready" && previousStatus !== "ready" && previousStatus !== "error";
+
+    if (status === "error") {
+      if (latestSubmittedPromptRef.current) {
+        setFailedPrompt(latestSubmittedPromptRef.current);
+      }
+      setFooterError(error?.message || "Something went wrong while generating.");
+    }
+
+    if (completedSuccessfully) {
+      setFailedPrompt(null);
+      setFooterError(null);
+      latestSubmittedPromptRef.current = null;
+    }
+
+    previousStatusRef.current = status;
+  }, [error, status]);
+
+  const submitPrompt = (prompt: string, options?: { clearInput?: boolean }) => {
+    const trimmed = prompt.trim();
+    if (!trimmed || submitting) {
+      return false;
+    }
+
+    if (options?.clearInput) {
+      setInput("");
+    }
+    setFooterError(null);
+    latestSubmittedPromptRef.current = trimmed;
+    void sendMessage({ text: trimmed });
+    return true;
+  };
 
   const handleSend = () => {
-    const trimmed = input.trim();
-    if (!trimmed || submitting) {
-      return;
-    }
-    setInput("");
-    void sendMessage({ text: trimmed });
+    submitPrompt(input, { clearInput: true });
   };
 
   return (
@@ -184,22 +220,19 @@ function ChatShell({
                 </h2>
               </div>
               <span className="rounded-full border border-line bg-paper px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                {submitting ? "Thinking" : "Ready"}
+                {statusLabel}
               </span>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2.5">
               {portfolio.quickPrompts.map((prompt) => (
                 <button
                   key={prompt}
                   type="button"
                   onClick={() => {
-                    if (submitting) {
-                      return;
-                    }
-                    void sendMessage({ text: prompt });
+                    submitPrompt(prompt);
                   }}
-                  className="rounded-full border border-line bg-paper px-3 py-1.5 text-xs text-foreground transition hover:border-brand hover:text-brand disabled:cursor-not-allowed disabled:opacity-60"
+                  className="min-h-9 rounded-full border border-line bg-paper px-3.5 py-2 text-[11px] font-medium leading-tight text-foreground transition hover:border-brand hover:text-brand disabled:cursor-not-allowed disabled:opacity-60 sm:text-xs"
                   disabled={submitting}
                 >
                   {prompt}
@@ -225,7 +258,7 @@ function ChatShell({
               return (
                 <article
                   key={message.id}
-                  className={`max-w-[90%] rounded-2xl px-4 py-3 shadow-sm sm:max-w-[82%] ${
+                  className={`max-w-[96%] rounded-2xl px-4 py-3.5 shadow-sm sm:max-w-[82%] ${
                     isUser
                       ? "ml-auto border border-brand/40 bg-brand-soft text-foreground"
                       : "mr-auto border border-line bg-paper"
@@ -234,7 +267,7 @@ function ChatShell({
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
                     {isUser ? "You" : `${portfolio.name.split(" ")[0]} AI`}
                   </p>
-                  <div className="mt-2 space-y-2 text-sm leading-relaxed text-foreground/95">
+                  <div className="mt-2 space-y-2.5 text-[15px] leading-7 text-foreground/95 [overflow-wrap:anywhere] sm:text-sm sm:leading-relaxed">
                     {text.split("\n\n").map((block, blockIndex) => (
                       <p key={`${message.id}-${blockIndex}`}>{block}</p>
                     ))}
@@ -257,7 +290,7 @@ function ChatShell({
                 event.preventDefault();
                 handleSend();
               }}
-              className="flex items-end gap-3"
+              className="flex flex-col gap-3 sm:flex-row sm:items-end"
             >
               <label className="sr-only" htmlFor="chat-input">
                 Ask a question
@@ -268,21 +301,35 @@ function ChatShell({
                 onChange={(event) => setInput(event.target.value)}
                 placeholder="Ask a recruiter-style question about fit, measurable impact, leadership, or contact details..."
                 rows={2}
-                className="min-h-20 flex-1 resize-none rounded-2xl border border-line bg-paper px-4 py-3 text-sm outline-none transition focus:border-brand"
+                className="min-h-24 w-full flex-1 resize-none rounded-2xl border border-line bg-paper px-4 py-3 text-[15px] leading-6 outline-none transition focus:border-brand sm:min-h-20 sm:text-sm"
                 disabled={submitting}
               />
               <button
                 type="submit"
-                className="rounded-2xl bg-brand px-5 py-3 text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-65"
+                className="w-full rounded-2xl bg-brand px-5 py-3 text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
                 disabled={submitting || input.trim().length === 0}
               >
                 Send
               </button>
             </form>
-            {error ? (
-              <p className="mt-3 text-xs text-red-700">
-                {error.message || "Something went wrong while generating."}
-              </p>
+            {footerError ? (
+              <div className="mt-3 flex flex-wrap items-center gap-2 rounded-2xl border border-red-200 bg-red-50 px-3 py-2">
+                <p className="min-w-[220px] flex-1 text-xs leading-relaxed text-red-800">
+                  {footerError}
+                </p>
+                {failedPrompt ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      submitPrompt(failedPrompt);
+                    }}
+                    className="min-h-9 rounded-xl border border-red-300 bg-white px-3 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-65"
+                    disabled={submitting}
+                  >
+                    Retry
+                  </button>
+                ) : null}
+              </div>
             ) : null}
           </footer>
         </section>
