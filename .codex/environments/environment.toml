@@ -6,9 +6,17 @@ name = "Job Application AI"
 script = ""
 
 [[actions]]
-name = "Run"
+name = "Run-Career"
 icon = "run"
 command = '''
-cd "/Users/coto/Documents/Job Application AI/career-portfolio"
+cd /Users/coto/Documents/Job\ Application\ AI/career-portfolio
 python3 -m http.server 8080
+'''
+
+[[actions]]
+name = "AI-Run"
+icon = "tool"
+command = '''
+cd /Users/coto/Documents/Job\ Application\ AI/ai-portfolio
+npm run dev:all
 '''
