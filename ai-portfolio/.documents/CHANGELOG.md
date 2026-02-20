@@ -4,6 +4,22 @@ All notable changes to this AI portfolio project will be documented here.
 Entries follow Keep a Changelog conventions.
 Dates are in YYYY-MM-DD, newest entries go on top.
 
+## Portfolio Release 0.4 — 2026-02-20
+
+### Docs
+- Documented repository-level source-of-truth and publish-gate rules so portfolio content updates are grounded in CV/resume/experience artifacts (Ticket: TICKET-1001-publish-real-profile-project-content-2026-02-20, Plan: PLAN-1001-publish-real-profile-project-content-2026-02-20 | direct request).
+
+### Tickets
+- Promoted the validated TICKET-1001 implementation plan to `current_plan` and linked the active plan path in the ticket for implementation handoff clarity (Ticket: TICKET-1001-publish-real-profile-project-content-2026-02-20, Plan: PLAN-1001-publish-real-profile-project-content-2026-02-20 | direct request).
+
+#### Commit details
+- `43dd25b` — **docs(ticket-1001): promote validated plan and sync ticket references**  
+  *Files*: `ai-portfolio/.documents/.plans/current_plan/PLAN-1001-publish-real-profile-project-content-2026-02-20.md`, `ai-portfolio/.documents/.tickets/.counter`, `ai-portfolio/.documents/.tickets/.latest`, `ai-portfolio/.documents/.tickets/current/TICKET-1001-publish-real-profile-project-content-2026-02-20.md`  
+  *Notes*: Captured and activated the execution plan, then aligned ticket scope/context with the approved source-mapping workflow.
+- `aba98d8` — **docs(content): codify experience source-of-truth update rules**  
+  *Files*: `ai-portfolio/AGENTS.md`, `ai-portfolio/README.md`, `ai-portfolio/.gitignore`  
+  *Notes*: Added durable guidance for source precedence, verification gates, and swap-file hygiene to prevent ungrounded profile edits.
+
 ## Portfolio Release 0.3 — 2026-02-20
 
 ### Fixed
