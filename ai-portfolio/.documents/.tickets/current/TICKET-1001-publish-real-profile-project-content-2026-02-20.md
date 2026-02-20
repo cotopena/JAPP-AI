@@ -81,18 +81,18 @@ Replace seeded placeholder portfolio copy with production-ready profile, achieve
   - **Then** returned details reflect updated seeded data and avoid invented claims
 
 ## Deliverables
-- [ ] Code updated in `convex/portfolio.ts` and `src/app/page.tsx`
-- [ ] JavaScript interaction/data logic updated (if applicable)
-- [ ] Source mapping doc created (`.documents/research/TICKET-1001-content-source-map-2026-02-20.md`)
-- [ ] Docs updated (`.documents/CHANGELOG.md`)
-- [ ] Telemetry/metrics/alerts defined
+- [x] Code updated in `convex/portfolio.ts` and `src/app/page.tsx`
+- [x] JavaScript interaction/data logic updated (if applicable)
+- [x] Source mapping doc created (`.documents/research/TICKET-1001-content-source-map-2026-02-20.md`)
+- [x] Docs updated (`.documents/CHANGELOG.md`)
+- [ ] Telemetry/metrics/alerts defined (not added; out of scope for this ticket)
 
 ## Verification Commands
-- [ ] bash workflow/scripts/lint-prompts.sh (if docs/prompts changed)
-- [ ] npm run lint
-- [ ] npm run build
-- [ ] npx convex run portfolio:previewDefaults '{"slug":"main"}'
-- [ ] npm run dev:all, then manually verify profile panel, prompts, and chat answers
+- [x] bash workflow/scripts/lint-prompts.sh (if docs/prompts changed)
+- [x] npm run lint
+- [x] npm run build
+- [x] npx convex run portfolio:previewDefaults '{"slug":"main"}'
+- [x] npm run dev:all, then manually verify profile panel, prompts, and chat answers
 
 ## Non-Functional Requirements
 - Performance/SLO: no additional client/server round-trips introduced
@@ -129,3 +129,19 @@ Replace seeded placeholder portfolio copy with production-ready profile, achieve
 - Seeded `main` portfolio content is replaced with approved real profile/project data
 - UI prompt labels and helper text match recruiter-focused Day 1 outcomes
 - Manual and command-based checks in this ticket complete without regressions
+
+## Implementation Notes (2026-02-20)
+- Added `.documents/research/TICKET-1001-content-source-map-2026-02-20.md` with target-field to source-line traceability for every seeded profile, skills, prompts, and project claim.
+- Replaced default payload content in `convex/portfolio.ts` using mapped source statements; kept `PortfolioPayload` and seed/query contracts unchanged.
+- Preserved deterministic featured behavior by setting exactly three projects with `featured: true`, compatible with `filter(...).slice(0, 3)` rendering in `src/app/page.tsx`.
+- Updated recruiter-facing helper text and input placeholder in `src/app/page.tsx` and tightened grounded-response rules in `src/app/api/chat/route.ts`.
+- Fixed assistant-turn persistence in `src/app/api/chat/route.ts` by persisting assistant text via `streamText` `onFinish`.
+
+## Validation Evidence (2026-02-20)
+- `rg -n "target field|source file|final wording" .documents/research/TICKET-1001-content-source-map-2026-02-20.md` -> PASS (mapping column header confirmed).
+- `bash workflow/scripts/lint-prompts.sh` -> PASS.
+- `npx convex run portfolio:previewDefaults '{"slug":"main"}'` -> PASS (returns updated mapped content; no placeholder copy).
+- `npm run lint` -> PASS.
+- `npm run build` -> PASS.
+- `npm run dev:all` -> PASS.
+- End-to-end persistence regression check -> PASS: POST `/api/chat` with session `5a3eed4c-1874-4cbe-beaa-07a36d605060`, then `npx convex run chat:getMessagesBySession '{"sessionId":"5a3eed4c-1874-4cbe-beaa-07a36d605060"}'` returned both `user` and `assistant` turns.
