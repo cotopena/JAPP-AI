@@ -1,6 +1,6 @@
 # Commit Changes
 
-You package work for the `career-portfolio` repo: create clean git commits and update `.documents/CHANGELOG.md`. Keep `workflow/README.md` + `workflow/tooling.config.json` handy for repo paths and tool fallbacks.
+You package work for the active portfolio repo (`career-portfolio` or `ai-portfolio`): create clean git commits and update `.documents/CHANGELOG.md`. Keep `workflow/README.md` + `workflow/tooling.config.json` handy for repo paths and tool fallbacks.
 
 ---
 
@@ -68,7 +68,7 @@ Commit 2
   Files:
     - workflow/README.md
   Message:
-    docs: align prompts with career-portfolio workflow
+    docs: align prompts with shared portfolio workflow
 ```
 
 **Checklist**
@@ -97,15 +97,15 @@ git log --oneline -n 5
 
 ---
 
-## 5) Update `.documents/CHANGELOG.md` (Career Portfolio Beta format; confirm title first)
+## 5) Update `.documents/CHANGELOG.md` (Portfolio Release format; confirm title first)
 
 **Target file:** `.documents/CHANGELOG.md`  
-**Goal:** Add a new top entry using the Career Portfolio MVP format and map bullets to the commits you just created.
+**Goal:** Add a new top entry using the shared Portfolio Release format and map bullets to the commits you just created.
 
 ### 5.1 Header Format & Bumps
 - Header format:  
   ```text
-  ## Career Portfolio Beta <MAJOR>.<MINOR> — <YYYY-MM-DD>
+  ## Portfolio Release <MAJOR>.<MINOR> — <YYYY-MM-DD>
   ```
 - Default **patch** bump: increment `<MINOR>` by 1 (e.g., `Beta 1.0 → 1.1 → 1.2`).
 - Larger release: increment `<MAJOR>` and reset `<MINOR>=0` (e.g., `Beta 1.4 → Beta 2.0`).
@@ -118,7 +118,7 @@ cat > .documents/CHANGELOG.md <<'EOF_CHANGELOG'
 # Changelog
 
 All notable changes to this project will be documented here.
-Entries follow Keep a Changelog conventions and the Career Portfolio MVP version style.
+Entries follow Keep a Changelog conventions and the Portfolio Release version style.
 Dates are in YYYY-MM-DD, newest entries go on top.
 
 EOF_CHANGELOG
@@ -127,7 +127,7 @@ EOF_CHANGELOG
 ### 5.3 Compute the Next Title
 Use the highest MVP version even if the file is out of order:
 ```bash
-LAST_TITLE=$(grep -E '^## Career Portfolio Beta [0-9]+\.[0-9]+' .documents/CHANGELOG.md | sort -V -k4,4 | tail -n1)
+LAST_TITLE=$(grep -E '^## Portfolio Release [0-9]+\.[0-9]+' .documents/CHANGELOG.md | sort -V -k4,4 | tail -n1)
 DATE=$(date +"%Y-%m-%d")
 
 if [ -z "$LAST_TITLE" ]; then
@@ -138,12 +138,12 @@ else
   MINOR=$(echo "$LAST_TITLE" | awk '{print $4}' | cut -d'.' -f2)
 fi
 
-NEXT_TITLE="Career Portfolio Beta ${MAJOR}.$((MINOR+1))"
+NEXT_TITLE="Portfolio Release ${MAJOR}.$((MINOR+1))"
 echo "Proposed NEXT_TITLE: $NEXT_TITLE — $DATE"
 ```
 If the user requests a larger bump:
 ```bash
-NEXT_TITLE="Career Portfolio Beta $((MAJOR+1)).0"
+NEXT_TITLE="Portfolio Release $((MAJOR+1)).0"
 ```
 
 ### 5.4 Sections & Bullets
@@ -165,7 +165,7 @@ Ask which mode to use if not stated.
 
 ### 5.7 Template (Prepend at Top)
 ```markdown
-## Career Portfolio Beta X.Y — YYYY-MM-DD
+## Portfolio Release X.Y — YYYY-MM-DD
 
 ### Added
 - feat(scope): summary + why (Ticket: ..., Plan: ...)
@@ -207,7 +207,7 @@ git show --name-only --pretty=format:'' <HASH> | sed '/^$/d'
 If a changelog update is the only file modified after feature/docs commits, create a final changelog commit:
 ```bash
 git add .documents/CHANGELOG.md
-git commit -m "docs(changelog): update Career Portfolio Beta X.Y"
+git commit -m "docs(changelog): update Portfolio Release X.Y"
 ```
 
 Before ending the command, verify:

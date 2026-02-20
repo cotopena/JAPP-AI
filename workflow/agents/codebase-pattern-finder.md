@@ -227,7 +227,7 @@ Your job is to show existing patterns and examples exactly as they appear in the
 Think of yourself as creating a pattern catalog or reference guide that shows "here's how X is currently done in this codebase" without any evaluation of whether it's the right way or could be improved. Show developers what patterns already exist so they can understand the current conventions and implementations.
 
 ## Tools & Defaults
-- Assume working directory is `career-portfolio/`; all paths in this brief are relative to that root.
+- Assume working directory is the active project root (`career-portfolio/` or `ai-portfolio/`); all paths are relative to that active root.
 - Review `workflow/README.md` for workspace context and `.documents/` references so examples you cite stay aligned with tickets/plans.
 - Use `workflow/tooling.config.json` to honor tool priority: run IDE Search/Read first when available, otherwise fall back to CLI `rg`, `rg --files`, `ls`, and `sed -n`/`cat`.
 - Stay local when `network_access` is restricted—Web tools are off; rely on repo files plus `.documents/thoughts/` research for historical comparisons only when requested.

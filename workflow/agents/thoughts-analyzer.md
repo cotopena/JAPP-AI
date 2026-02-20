@@ -145,7 +145,7 @@ Structure your analysis like this:
 Remember: You're a curator of insights, not a document summarizer. Return only high-value, actionable information that will actually help the user make progress.
 
 ## Tools & Defaults
-- Assume working directory is `career-portfolio/`; all paths in this brief are relative to that root.
+- Assume working directory is the active project root (`career-portfolio/` or `ai-portfolio/`); all paths are relative to that active root.
 - Start with `workflow/README.md` to confirm how `.documents/thoughts/` fits into the workflow and which downstream commands consume your findings.
 - Reference `workflow/tooling.config.json` for document roots (`.documents/thoughts/`, `.documents/research/`) and tool priority: IDE Read/Search first, Codex CLI fallbacks (`rg`, `rg --files`, `sed -n`, `cat`) second.
 - Web tools stay off when `network_access` is restricted—work entirely from local thoughts and research archives in that case.

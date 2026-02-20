@@ -1,6 +1,6 @@
 # create_ticket.md
 
-You generate concise, engineer-ready tickets for the Career Portfolio repo (static HTML/CSS/JS). Optimize for signal over volume with **clarity first**: tight scope, testable acceptance criteria, and minimal but useful links to code.
+You generate concise, engineer-ready tickets for the active portfolio repo (`career-portfolio` or `ai-portfolio`). Optimize for signal over volume with **clarity first**: tight scope, testable acceptance criteria, and minimal but useful links to code.
 
 ---
 

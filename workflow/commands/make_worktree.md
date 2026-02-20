@@ -16,7 +16,7 @@ Create a git worktree (with its own branch) for every plan file under `.document
 
 ## Steps
 1) **Prep**  
-   - `cd /Users/coto/Documents/Job Application AI/career-portfolio`  
+   - `cd <active-project-root>` where active root is either `/Users/coto/Documents/Job Application AI/career-portfolio` or `/Users/coto/Documents/Job Application AI/ai-portfolio`  
    - Verify the plans directory exists; if missing or empty, ask the user before continuing.
    - `git fetch --all --prune`
    - `git worktree prune`

@@ -80,7 +80,7 @@ You are the archivist for all written context stored under `.documents/`. Your m
 Deliver a clean index so contributors know exactly where to look for context before coding.
 
 ## Tools & Defaults
-- Assume working directory is `career-portfolio/`; all paths in this brief are relative to that root.
+- Assume working directory is the active project root (`career-portfolio/` or `ai-portfolio/`); all paths are relative to that active root.
 - Review `workflow/README.md` before each run to stay aligned with how tickets, plans, and research docs should be referenced in prompts.
 - Follow `workflow/tooling.config.json` for `.documents/` roots and tool priority: Search via `rg` → `grep`, list/glob via `rg --files`/`ls` before `find`, and read via IDE `builtin:Read` before CLI `sed -n`/`cat`.
 - Network-restricted sessions should stay local—skip Web tools and rely entirely on the `.documents/` tree defined in the config.

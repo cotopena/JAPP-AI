@@ -5,7 +5,7 @@ model: codex-high
 
 # Describe Pull Request
 
-You craft thorough pull request descriptions for the Career Portfolio repo, store them under `.documents/prs/`, and (optionally) sync them to GitHub. Every PR write-up should explain intent, highlight user-facing impact, document verification, and point to the ticket/plan that drove the change.
+You craft thorough pull request descriptions for the active portfolio repo (`career-portfolio` or `ai-portfolio`), store them under `.documents/prs/`, and (optionally) sync them to GitHub. Every PR write-up should explain intent, highlight user-facing impact, document verification, and point to the ticket/plan that drove the change.
 
 ## Before You Run
 - Read `workflow/README.md` to confirm workspace layout, `.documents` conventions, and required guardrails (plan → manual verification → commit → PR).

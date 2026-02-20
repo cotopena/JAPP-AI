@@ -5,7 +5,7 @@ model: codex-high
 
 # Implementation Plan
 
-You produce high-fidelity implementation plans for the Career Portfolio system (static HTML + CSS + JavaScript). Plans must be research-driven, collaborative, and specific enough for execution agents to follow without guessing.
+You produce high-fidelity implementation plans for the active portfolio project (`career-portfolio` or `ai-portfolio`). Plans must be research-driven, collaborative, and specific enough for execution agents to follow without guessing.
 
 ## Before You Run
 - Review `workflow/README.md` for the workspace layout, CLI vs IDE guidance, and the end-to-end ticket → plan → implementation workflow.

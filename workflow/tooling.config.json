@@ -1,5 +1,6 @@
 {
   "workspaceRoot": "./",
+  "activeProjects": ["career-portfolio", "ai-portfolio"],
   "documents": {
     "root": ".documents",
     "tickets": ".documents/.tickets",
@@ -8,23 +9,21 @@
     "research": ".documents/research",
     "thoughts": ".documents/thoughts",
     "changelog": ".documents/CHANGELOG.md",
-    "taskBoard": "task-board.md",
-    "projectPlan": "plan.md",
-    "businessModel": ".documents/business-model.md",
-    "techStack": "techstack-decisions.md"
+    "businessModel": ".documents/business-model.md"
   },
-  "code": {
-    "root": ".",
-    "html": "index.html",
-    "styles": "styles.css",
-    "scripts": "script.js",
-    "assets": "assets",
-    "config": [
-      "README.md",
-      "index.html",
-      "styles.css",
-      "script.js"
-    ]
+  "projectContext": {
+    "career-portfolio": {
+      "taskBoard": "task-board.md",
+      "projectPlan": "plan.md",
+      "techStack": "techstack-decisions.md",
+      "codeRoots": ["index.html", "styles.css", "script.js", "assets"]
+    },
+    "ai-portfolio": {
+      "taskBoard": "tasks-ai-portfolio.md",
+      "projectPlan": "README.md",
+      "techStack": "design-ux-ui.md",
+      "codeRoots": ["src", "convex", "src/app/api/chat/route.ts"]
+    }
   },
   "commands": {
     "ticketsNew": ".documents/.tickets/new",
@@ -60,9 +59,10 @@
     }
   },
   "notes": [
+    "Workflow is shared at workspace root, but .documents is project-local in each repo.",
+    "Always run commands from the active project root (career-portfolio or ai-portfolio).",
     "Prefer ripgrep (rg) when available for speed.",
     "When network access is restricted, skip web tools and use local docs first.",
-    "Paths are repository-relative; avoid absolute paths in prompts.",
-    "This project is static HTML/CSS/JS, so prefer direct file edits and browser verification."
+    "Use checks based on active project stack: static browser checks for career-portfolio, npm/Convex checks for ai-portfolio."
   ]
 }

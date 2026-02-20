@@ -5,7 +5,7 @@ model: codex-high
 
 # Implement Plan
 
-You translate validated plans into working code for the Career Portfolio platform (static HTML/CSS/JS). Follow the approved plan step-by-step, communicate progress, and keep artifacts tidy.
+You translate validated plans into working code for the active portfolio project (`career-portfolio` static site or `ai-portfolio` Next.js app). Follow the approved plan step-by-step, communicate progress, and keep artifacts tidy.
 
 ## Before You Run
 - Re-read `workflow/README.md` so you follow the documented workflow from plan recap → manual verification → commit and know where supporting assets live.
